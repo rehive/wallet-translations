@@ -126,10 +126,9 @@ Then copy the outputs into `src/source/` here and run `yarn sync`.
 
 | Secret | Where | Description |
 |--------|-------|-------------|
-| `CROSS_REPO_TOKEN` | wallet-react, wallet-react-native | Write access to this (`wallet-translations`) repo, used to push translation files and history snapshots |
-| `CROSS_REPO_TOKEN` | wallet-translations | Write access to this repo, used to push the `sync-and-update` translation branch |
+| `WALLET_TRANSLATIONS_TOKEN` | wallet-react, wallet-react-native | A PAT with write access to this (`wallet-translations`) repo. Used to push translation files and history snapshots. |
 
-The built-in `GITHUB_TOKEN` is used for opening pull requests within this repo.
+`wallet-translations` itself uses only the built-in `GITHUB_TOKEN` — no secrets need to be configured here.
 
 ---
 
