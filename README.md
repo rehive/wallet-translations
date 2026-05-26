@@ -143,9 +143,20 @@ Then copy the outputs into `src/source/` here and run `yarn sync`.
 
 ## Accessing language files
 
-Since this repo is public, language files can be fetched directly:
+Language files are deployed to GitHub Pages on every push to `main`. Files are served flat — no need to know the internal directory structure:
 
 ```
-https://raw.githubusercontent.com/rehive/wallet-translations/main/src/language-en.json
-https://raw.githubusercontent.com/rehive/wallet-translations/main/src/locales/language-fr.json
+https://rehive.github.io/wallet-translations/language-en.json
+https://rehive.github.io/wallet-translations/language-fr.json
+https://rehive.github.io/wallet-translations/language-de.json
+```
+
+An `index.json` is also generated listing all available locale codes:
+
+```
+https://rehive.github.io/wallet-translations/index.json
+```
+
+```json
+{ "locales": ["en", "fr", "de"] }
 ```

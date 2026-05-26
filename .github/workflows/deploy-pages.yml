@@ -1,0 +1,59 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/language-en.json'
+      - 'src/locales/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one Pages deployment at a time
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build deploy folder
+        run: |
+          mkdir -p _site
+
+          # English master
+          cp src/language-en.json _site/language-en.json
+
+          # All translated locale files — flattened from src/locales/
+          if [ -d src/locales ]; then
+            cp src/locales/language-*.json _site/ 2>/dev/null || true
+          fi
+
+          # index.json — lists all available locale codes for easy discovery
+          node -e "
+            const fs = require('fs');
+            const files = fs.readdirSync('_site').filter(f => f.startsWith('language-') && f.endsWith('.json'));
+            const locales = files.map(f => f.replace('language-', '').replace('.json', ''));
+            fs.writeFileSync('_site/index.json', JSON.stringify({ locales }, null, 2));
+            console.log('Locales deployed:', locales.join(', '));
+          "
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
