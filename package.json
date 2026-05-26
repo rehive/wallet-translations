@@ -1,0 +1,17 @@
+{
+  "name": "wallet-translations",
+  "version": "1.0.0",
+  "description": "Centralized translation files for Rehive wallet apps",
+  "private": false,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/sync.cjs",
+    "diff": "node scripts/diff.js",
+    "add-language": "node scripts/add-language.js"
+  },
+  "packageManager": "yarn@1.22.22",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

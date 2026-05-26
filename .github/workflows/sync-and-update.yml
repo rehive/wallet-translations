@@ -1,0 +1,52 @@
+name: Sync and update translations
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/language-en.json'
+  workflow_dispatch:  # allow manual runs for testing
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout wallet-translations
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Diff language files and apply changes
+        id: diff
+        run: node scripts/diff.js
+
+      - name: Open PR if changes detected
+        if: steps.diff.outputs.has_changes == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          BRANCH="translations/update-$(date +%Y%m%d-%H%M%S)"
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add src/
+          git commit -m "chore: sync translation keys $(date +%Y-%m-%d)"
+          git push origin "$BRANCH"
+          gh pr create \
+            --title "chore: sync translation keys $(date +%Y-%m-%d)" \
+            --body "$(node scripts/pr-body.js)" \
+            --base main \
+            --head "$BRANCH"
+
+      - name: No changes
+        if: steps.diff.outputs.has_changes != 'true'
+        run: echo "All language files are already up to date. No PR needed."
