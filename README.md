@@ -124,11 +124,21 @@ Then copy the outputs into `src/source/` here and run `yarn sync`.
 
 ## GitHub secrets required
 
+Cross-repo pushes are authenticated by the **`rehive-translations-bot`** GitHub App (installed on `wallet-translations` only, with Contents: write). Each repo that needs to push reads the app credentials from these org-level secrets:
+
 | Secret | Where | Description |
 |--------|-------|-------------|
-| `WALLET_TRANSLATIONS_TOKEN` | wallet-react, wallet-react-native | A PAT with write access to this (`wallet-translations`) repo. Used to push translation files and history snapshots. |
+| `TRANSLATIONS_BOT_APP_ID` | wallet-react, wallet-react-native, wallet-translations | App ID of `rehive-translations-bot`. |
+| `TRANSLATIONS_BOT_PRIVATE_KEY` | wallet-react, wallet-react-native, wallet-translations | Private key (PEM) of `rehive-translations-bot`. |
 
-`wallet-translations` itself uses only the built-in `GITHUB_TOKEN` — no secrets need to be configured here.
+Each workflow mints a short-lived installation token via [`actions/create-github-app-token`](https://github.com/actions/create-github-app-token):
+
+- **wallet-react / wallet-react-native** — mint a token scoped to `wallet-translations` and push their `src/source/*.json` file here. The token can only touch `wallet-translations`, never the wallet repo it runs in.
+- **wallet-translations** (`merge-app-translations.yml`) — mints a token to push `src/language-en.json`. This is required because a push made with the built-in `GITHUB_TOKEN` does **not** trigger other workflows; pushing as the app lets `sync-and-update.yml` and `deploy-pages.yml` fire.
+
+The remaining workflows here (`sync-and-update.yml`, `deploy-pages.yml`) use only the built-in `GITHUB_TOKEN`.
+
+> **Why a GitHub App and not a PAT?** The app isn't tied to a person, mints short-lived tokens, and never expires (no annual renewal). If its private key leaks, the blast radius is write access to `wallet-translations` only — the one repo it's installed on.
 
 ---
 
