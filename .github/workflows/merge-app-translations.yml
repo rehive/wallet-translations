@@ -7,14 +7,33 @@ on:
       - 'src/source/wallet-react.json'
       - 'src/source/wallet-react-native.json'
 
+permissions:
+  contents: write
+
+# Two wallet apps can push near-simultaneously; serialize to avoid push races.
+concurrency:
+  group: merge-app-translations
+  cancel-in-progress: false
+
 jobs:
   merge:
     runs-on: ubuntu-latest
     steps:
+      # Mint a short-lived token from the rehive-translations-bot GitHub App.
+      # Pushing with GITHUB_TOKEN would NOT trigger sync-and-update.yml or
+      # deploy-pages.yml (GitHub blocks workflow-triggering by GITHUB_TOKEN),
+      # so we push as the app to keep the cascade working.
+      - name: Generate bot token
+        id: app-token
+        uses: actions/create-github-app-token@v1
+        with:
+          app-id: ${{ secrets.TRANSLATIONS_BOT_APP_ID }}
+          private-key: ${{ secrets.TRANSLATIONS_BOT_PRIVATE_KEY }}
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ steps.app-token.outputs.token }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -29,4 +48,9 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add src/language-en.json
-          git diff --cached --quiet || git commit -m "chore: merge app translations into language-en.json" && git push
+          if git diff --cached --quiet; then
+            echo "No changes to language-en.json — nothing to commit."
+          else
+            git commit -m "chore: merge app translations into language-en.json"
+            git push
+          fi
