@@ -8,10 +8,18 @@
   "scripts": {
     "sync": "node scripts/sync.cjs",
     "diff": "node scripts/diff.js",
-    "add-language": "node scripts/add-language.js"
+    "add-language": "node scripts/add-language.js",
+    "wallet-new:diff": "node scripts/wallet-new/diff.mjs",
+    "wallet-new:translate": "node scripts/wallet-new/translate.mjs",
+    "wallet-new:add-language": "node scripts/wallet-new/add-language.mjs",
+    "test": "node --test scripts/wallet-new/validate.test.mjs"
   },
   "packageManager": "yarn@1.22.22",
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.120.0",
+    "zod": "^4.4.3"
   }
 }

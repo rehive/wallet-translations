@@ -1,0 +1,3120 @@
+{
+  "common": {
+    "back": "Back",
+    "show": "Show",
+    "hide": "Hide",
+    "on": "On",
+    "off": "Off",
+    "copy": "Copy",
+    "copied": "Copied",
+    "copiedLabel": "{{label}} copied",
+    "close": "Close",
+    "cancel": "Cancel",
+    "keyboard": {
+      "done": "Done"
+    },
+    "keypad": {
+      "delete": "Delete last digit"
+    },
+    "paste": "Paste",
+    "offlineError": "You're offline. Check your connection.",
+    "serviceUnavailable": {
+      "title": "Not available",
+      "body": "This feature isn't part of your account."
+    },
+    "availableLabel": "Available:",
+    "verificationCodeLabel": "Verification code",
+    "phoneCountryLabel": "Country dialling code",
+    "error": {
+      "title": "Something went wrong",
+      "body": "Something went wrong. Try again.",
+      "retry": "Return to home",
+      "refreshFailed": "Couldn't refresh. Try again."
+    },
+    "screen": {
+      "errorTitle": "Couldn't load",
+      "errorBody": "Try again in a moment.",
+      "retry": "Try again",
+      "emptyTitle": "Nothing here yet",
+      "emptyBody": "Nothing to show yet."
+    },
+    "select": {
+      "placeholder": "Select…",
+      "searchPlaceholder": "Search…",
+      "noResults": "No matches.",
+      "dismiss": "Close"
+    },
+    "datePicker": {
+      "placeholder": "Select a date",
+      "done": "Done"
+    },
+    "mfa": {
+      "verificationRejected": "We couldn't verify that code. Try again."
+    },
+    "nav": {
+      "activity": "Activity",
+      "cards": "Cards",
+      "rewards": "Rewards",
+      "help": "Help",
+      "logout": "Log out",
+      "hide_sensitive_data": "Hide sensitive data",
+      "show_sensitive_data": "Show sensitive data"
+    },
+    "comingSoon": {
+      "title": "Coming soon",
+      "message": "Check back soon."
+    },
+    "update": {
+      "title": "Update ready",
+      "body": "Restart to get the latest version.",
+      "restart": "Restart",
+      "later": "Later",
+      "failed": "Restart the app to finish updating."
+    },
+    "loading": "Loading…",
+    "verificationCodeDigit": "{{label}}, digit {{index}} of {{total}}"
+  },
+  "auth": {
+    "security": {
+      "line": "Your money and data are protected with encryption."
+    },
+    "landing": {
+      "description": "Log in or create an account",
+      "descriptionLoginOnly": "Log in to your account",
+      "login": "Log in",
+      "register": "Register"
+    },
+    "company": {
+      "title": "Connect to a wallet",
+      "subtitle": "Enter a wallet ID.",
+      "testNotice": "For developers only. Published apps connect automatically.",
+      "walletIdLabel": "Wallet ID",
+      "walletIdPlaceholder": "e.g. your-company",
+      "submit": "Continue",
+      "banner": {
+        "test": "Test mode — no real money.",
+        "suspended": "This wallet is suspended. Some features are unavailable."
+      },
+      "errors": {
+        "required": "Enter a wallet ID.",
+        "notFound": "We couldn't find that wallet. Check the ID and try again.",
+        "transient": "Couldn't reach the server. Check your connection and try again."
+      }
+    },
+    "switcher": {
+      "title": "Your accounts",
+      "a11yDescription": "Switch accounts or add another.",
+      "addAccount": "Add account",
+      "addSameApp": "Add another account",
+      "addDifferentApp": "Add a different wallet",
+      "cancelAdd": "Keep current account",
+      "switchAccount": "Switch account",
+      "logoutThis": "Log out this account",
+      "logoutAll": "Log out of all accounts",
+      "active": "Active",
+      "expired": "Session expired",
+      "reLogin": "Sign in again",
+      "switchTo": "Switch to {{name}}",
+      "removeAccount": "Remove account",
+      "removeFailed": "Couldn't remove that account. Try again.",
+      "unavailable": "That account is unavailable. Sign in again.",
+      "logoutAllConfirmTitle": "Log out of all accounts?",
+      "logoutAllConfirmBody": "You'll need to sign in to each account again.",
+      "logoutAllConfirm": "Log out of all",
+      "removeConfirmTitle": "Remove {{name}}?",
+      "removeConfirmBody": "You'll need to sign in again to use this account.",
+      "removeConfirm": "Remove"
+    },
+    "logout": {
+      "confirmTitle": "Log out?",
+      "confirmBody": "You'll need to sign in again.",
+      "confirmTitleAccount": "Log out of {{account}}?",
+      "confirmBodyNext": "You'll stay signed in as {{next}}.",
+      "confirm": "Log out",
+      "error": "Couldn't log out. Check your connection and try again."
+    },
+    "login": {
+      "title": "Sign in",
+      "subtitle": "Welcome back",
+      "registerCta": "Don't have an account? Create one",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "e.g. hello@example.com",
+      "mobileLabel": "Mobile number",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "passwordToggleA11y": "Show or hide password",
+      "submit": "Sign in",
+      "forgotCta": "Forgot password?",
+      "switchWallet": "Use a different wallet ID",
+      "errors": {
+        "email": "Enter a valid email address.",
+        "mobile": "Enter a valid mobile number.",
+        "password": "Enter your password."
+      },
+      "errorFallback": "Couldn't sign you in. Try again."
+    },
+    "register": {
+      "title": "Create account",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "e.g. hello@example.com",
+      "mobileLabel": "Mobile number",
+      "usernameLabel": "Username",
+      "usernamePlaceholder": "Choose a username",
+      "firstNameLabel": "First name",
+      "firstNamePlaceholder": "e.g. Alex",
+      "lastNameLabel": "Last name",
+      "lastNamePlaceholder": "e.g. Morgan",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "At least 8 characters",
+      "confirmPasswordLabel": "Confirm password",
+      "confirmPasswordPlaceholder": "Re-enter your password",
+      "submit": "Create account",
+      "backToLogin": "Already have an account? Sign in",
+      "terms": {
+        "sentence": "I agree to the <privacy>Privacy Policy</privacy> and <tos>Terms of Use</tos>"
+      },
+      "errors": {
+        "email": "Enter a valid email address.",
+        "mobile": "Enter a valid mobile number.",
+        "username": "Enter a username.",
+        "firstName": "Enter your first name.",
+        "lastName": "Enter your last name.",
+        "passwordMin": "Password must be at least 8 characters.",
+        "passwordMatch": "Passwords don't match.",
+        "terms": "Accept the terms to continue."
+      },
+      "errorFallback": "Couldn't create your account. Try again."
+    },
+    "forgot": {
+      "title": "Reset password",
+      "subtitle": "We'll send you reset instructions.",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "e.g. hello@example.com",
+      "mobileLabel": "Mobile number",
+      "submit": "Send reset instructions",
+      "success": "If the account exists, reset instructions are on the way.",
+      "errorFallback": "Couldn't send reset instructions. Try again.",
+      "errors": {
+        "email": "Enter a valid email address.",
+        "mobile": "Enter a valid mobile number."
+      }
+    },
+    "mfa": {
+      "subtitleTotp": "Enter the 6-digit code from your authenticator app.",
+      "subtitleSms": "Enter the 6-digit code we texted you.",
+      "subtitleStatic": "Enter one of your 12-character recovery codes.",
+      "resend": "Resend code",
+      "resending": "Sending…",
+      "resent": "New code sent.",
+      "resendError": "Couldn't resend the code. Try again.",
+      "throttledWait": "Too many attempts. Try again in about {{minutes}} min.",
+      "throttledLater": "Too many attempts. Try again later.",
+      "errorFallback": "That code didn't work. Try again.",
+      "verifying": "Verifying…",
+      "cancel": "Use a different account",
+      "stepUp": {
+        "title": "Verification required",
+        "method": "Verification method",
+        "factor": {
+          "totp": "App",
+          "sms": "SMS",
+          "static": "Recovery"
+        },
+        "factorAccessibility": {
+          "totp": "Authenticator app",
+          "sms": "SMS text message",
+          "static": "Recovery code"
+        },
+        "staticLabel": "Recovery code",
+        "staticPlaceholder": "Enter recovery code",
+        "verify": "Verify and continue",
+        "cancel": "Cancel",
+        "verifyError": "That code didn't work. Try again."
+      },
+      "enrol": {
+        "headerTitle": "Two-factor authentication",
+        "protectTitle": "Protect your account",
+        "protectBody": "Add an extra layer of security to sign-ins and sensitive transactions.",
+        "addTitle": "Add your account",
+        "scanInstructions": "Scan this QR code, or enter the setup key in your authenticator app.",
+        "addToApp": "Open your authenticator app to add this account.",
+        "openApp": "Open authenticator app",
+        "openAppError": "Nothing opened. Copy the setup key and paste it into your authenticator app.",
+        "alternateSetup": "Set up another way",
+        "showQr": "Show QR code for another device",
+        "hideQr": "Hide the QR code",
+        "qrForAnotherDevice": "Scan with another device",
+        "qrLabel": "QR code holding your setup key",
+        "verifying": "Verifying…",
+        "issuer": "Issuer",
+        "account": "Account",
+        "key": "Setup key",
+        "copyKey": "Copy setup key",
+        "keyCopied": "Setup key copied.",
+        "confirmTitle": "Verify setup",
+        "confirmPrompt": "Enter the 6-digit code from your authenticator app.",
+        "verifyTotp": "Verify and turn on 2FA",
+        "success": "Two-factor authentication is on.",
+        "enabledTitle": "Two-factor authentication is on",
+        "enabledBody": "Use a one-time code when extra verification is needed.",
+        "disable": "Turn off",
+        "disableWarning": "You won't be asked for a sign-in code.",
+        "disableConfirm": "Confirm turn off",
+        "disabled": "Two-factor authentication turned off.",
+        "keep": "Cancel",
+        "createError": "Couldn't start setup. Try again.",
+        "confirmError": "That code didn't work. Try again.",
+        "disableError": "Couldn't turn off two-factor authentication. Try again.",
+        "createSmsError": "Couldn't send a verification code. Try again.",
+        "backToMethods": "Choose another method",
+        "smsTitle": "Set up text-message verification",
+        "smsIntro": "We'll text you a code when extra verification is needed.",
+        "smsStepTitle": "Add your phone number",
+        "smsStepComplete": "Phone number added",
+        "smsConfirmTitle": "Verify your number",
+        "smsConfirmPrompt": "Enter the code sent to {{mobile}}.",
+        "smsLabel": "Mobile number",
+        "smsFormatHint": "Include the country code, starting with +.",
+        "sendSms": "Send code",
+        "verifySms": "Verify and enable",
+        "chooseTitle": "Verification method",
+        "methodApp": "Authenticator app",
+        "methodAppBody": "Codes from an app on your phone, even offline",
+        "methodSms": "Text message",
+        "methodSmsBody": "Codes texted to your phone number",
+        "noMethods": "No verification methods are available. Contact support.",
+        "requiredTitle": "Protect your transactions",
+        "requiredBody": "Set up two-factor authentication to continue."
+      },
+      "resendIn": "Resend code in {{seconds}}s",
+      "incorrect": "That code didn't work. Check it and try again."
+    }
+  },
+  "home": {
+    "title": "Home",
+    "greeting": "Hello {{name}}!",
+    "greetingNoName": "Hello!",
+    "recentTransactions": "Recent activity",
+    "seeAll": "See all",
+    "selectAccount": "Select account",
+    "allAccounts": "All accounts",
+    "accountCount_one": "{{count}} account",
+    "accountCount_other": "{{count}} accounts",
+    "add_funds": "Add funds",
+    "get_started_deposit_description": "Add money to your wallet.",
+    "get_started_send_title": "Send to a friend",
+    "get_started_send_description": "Pay someone by email, account ID, or crypto address.",
+    "get_started_receive_title": "Receive funds",
+    "get_started_receive_description": "Share your QR or address to get paid.",
+    "repeat": {
+      "title": "Send again",
+      "accessibilityLabel": "Send {{amount}} {{currency}} again to {{recipient}}"
+    },
+    "getStarted": {
+      "title": "Get started",
+      "subtitle": "Start using your wallet in a few steps.",
+      "progress": "{{done}} of {{total}} done",
+      "dismiss": "Dismiss",
+      "depositCta": "Add funds",
+      "sendCta": "Send",
+      "receiveCta": "Receive",
+      "addFunds": {
+        "title": "Add funds",
+        "body": "Add money to your wallet."
+      },
+      "send": {
+        "title": "Send to a friend",
+        "body": "Pay someone by email, account ID, or crypto address."
+      },
+      "receive": {
+        "title": "Receive funds",
+        "body": "Share your QR or address to get paid."
+      }
+    },
+    "welcome": {
+      "hello": "Hello there",
+      "title": "Welcome to {{company}}",
+      "subtitle": "Your global money account"
+    }
+  },
+  "accounts": {
+    "title": "Accounts",
+    "totalAvailableBalance": "Total available balance",
+    "walletTitle": "Your wallet",
+    "walletsTitle": "Your wallets",
+    "viewAll": "View all",
+    "history": "History",
+    "showAllTransactions": "Show all transactions",
+    "totalPartial": "Excludes balances without an exchange rate",
+    "list_error": "Couldn't load accounts.",
+    "viewLegacyCurrencies": "Show legacy accounts",
+    "hideLegacyCurrencies": "Hide legacy accounts",
+    "empty": {
+      "title": "No accounts yet",
+      "body": "Your accounts will appear once they're set up."
+    },
+    "legacy": {
+      "title": "Legacy accounts",
+      "tag": "(Legacy)",
+      "note": "You can move money out of these, but not in."
+    },
+    "detail": {
+      "title": "Account",
+      "availableBalance": "Available balance",
+      "transactionsTitle": "Transactions",
+      "notFoundTitle": "Account not found",
+      "notFound": "We couldn't find this account."
+    },
+    "carousel": {
+      "position": "Account {{index}} of {{count}}"
+    }
+  },
+  "transactions": {
+    "title": "Transactions",
+    "activityTitle": "Activity",
+    "recent": "Recent",
+    "empty": {
+      "title": "No transactions yet",
+      "body": "Your activity will appear here after you send or receive.",
+      "action": "Go to Home",
+      "filtered": {
+        "title": "No matching transactions",
+        "body": "Try a wider date range, or clear your filters to see everything.",
+        "action": "Clear filters"
+      }
+    },
+    "detail_title": "Transaction details",
+    "detail_section": "Details",
+    "detail_view_explorer_a11y": "Open transaction on {{explorer}}",
+    "detail_note": "Note",
+    "detail_bank": "Bank",
+    "detail_account": "Account",
+    "detail_from_address": "From address",
+    "detail_to_address": "To address",
+    "detail_transaction_id": "Transaction ID",
+    "detail_reference": "Reference",
+    "detail_amount": "Amount",
+    "detail_fee": "Fee",
+    "detail_total": "Total amount",
+    "detail_balance": "Account balance",
+    "detail_collection_code": "Collection code",
+    "detail_collection_code_invalid": "This collection code is no longer valid.",
+    "detail_payout_amount": "Recipient gets",
+    "detail_recipient_mobile": "Recipient mobile",
+    "detail_payout_method": "Payout method",
+    "detail_payout_method_wallet": "Mukuru wallet",
+    "detail_payout_method_cash": "Cash pickup",
+    "row_cash_out": "Cash out",
+    "row_crypto_deposit": "Crypto deposit",
+    "row_crypto_withdrawal": "Crypto withdrawal",
+    "row_fee": "Fee",
+    "detail_missing": "We couldn't find this transaction.",
+    "status_under_review": "Under review",
+    "status_ready": "Ready",
+    "status_collected": "Collected",
+    "status_cancelled": "Cancelled",
+    "cancelCollection": {
+      "button": "Cancel collection",
+      "title": "Cancel this collection?",
+      "confirmBody": "We'll return the payout minus any non-refundable fees. The code stops working now. This can't be undone.",
+      "confirm": "Cancel collection",
+      "keep": "Keep it",
+      "success": "Collection cancelled. The refund is back in your account.",
+      "failed": "Couldn't cancel this collection. Try again."
+    },
+    "list_error": "Couldn't load transactions.",
+    "viewAll": "View all transactions",
+    "group": {
+      "today": "Today",
+      "yesterday": "Yesterday"
+    },
+    "filter": {
+      "account": "Account",
+      "allAccounts": "All accounts",
+      "date": "Date",
+      "status": "Status",
+      "anyStatus": "Any status",
+      "clear": "Clear",
+      "in": "In",
+      "out": "Out",
+      "pending": "Pending",
+      "complete": "Complete",
+      "failed": "Failed",
+      "refresh": "Refresh",
+      "filterSelected": "{{filter}}: {{selection}}"
+    },
+    "date": {
+      "all": "All time",
+      "month": "This month",
+      "last30": "Last 30 days",
+      "last3m": "Last 3 months",
+      "year": "This year",
+      "custom": "Custom range"
+    },
+    "dateRange": {
+      "title": "Custom range",
+      "description": "Pick the first and last day to show.",
+      "from": "From",
+      "to": "To",
+      "apply": "Show transactions",
+      "inverted": "The From date must be earlier than the To date.",
+      "since": "Since {{date}}",
+      "until": "Until {{date}}"
+    },
+    "exportStatement": {
+      "title": "Export & statements",
+      "description": "Download transactions or request an account statement.",
+      "tabExport": "Export",
+      "tabStatement": "Statement"
+    },
+    "export": {
+      "newExport": "New export",
+      "format": "Format",
+      "formatCsv": "CSV",
+      "formatJson": "JSON",
+      "filters": "Filters",
+      "noFilters": "All transactions",
+      "create": "Create export",
+      "creating": "Creating…",
+      "createError": "Couldn't start the export. Try again.",
+      "empty": "No exports yet.",
+      "download": "Download",
+      "emptyFile": "No rows to download",
+      "downloadError": "Couldn't download the file. Try again."
+    },
+    "statement": {
+      "newStatement": "New statement",
+      "dateRange": "Date range",
+      "timezone": "Timezone",
+      "timezoneNote": "Statements use your device timezone.",
+      "create": "Create statement",
+      "creating": "Creating…",
+      "createError": "Couldn't start the statement. Try again.",
+      "empty": "No statements yet.",
+      "allTime": "All time",
+      "download": "Download",
+      "downloadError": "Couldn't download the file. Try again."
+    },
+    "jobStatus": {
+      "queued": "Queued",
+      "processing": "Processing",
+      "complete": "Ready",
+      "failed": "Failed"
+    },
+    "subtype_bought": "Bought",
+    "subtype_buy_failed": "Failed to buy",
+    "subtype_buy_pending": "Pending buy of",
+    "subtype_deposit_ach_complete": "Made an ACH deposit",
+    "subtype_deposit_ach_failed": "Failed ACH deposit",
+    "subtype_deposit_ach_pending": "Pending ACH deposit",
+    "subtype_deposit_complete": "Made a deposit",
+    "subtype_deposit_failed": "Failed deposit",
+    "subtype_deposit_pending": "Pending deposit",
+    "subtype_deposit_teller_failed": "Failed loading money at teller",
+    "subtype_deposit_teller_pending": "Pending loading money at teller",
+    "subtype_deposit_teller_successful": "Loaded money at teller",
+    "subtype_donate_credit_failed": "Failed donation from",
+    "subtype_donate_credit_pending": "Pending donation from",
+    "subtype_donate_credit_successful": "Donation from",
+    "subtype_donate_debit_failed": "Failed donation to",
+    "subtype_donate_debit_pending": "Pending donation to",
+    "subtype_donate_debit_successful": "Donation to",
+    "subtype_exchange_failed": "Failed to exchange",
+    "subtype_exchange_pending": "Pending exchange of",
+    "subtype_exchanged": "Exchanged",
+    "subtype_fee_credit_failed": "Failed fee payment",
+    "subtype_fee_credit_pending": "Pending fee payment",
+    "subtype_fee_credit_successful": "Fee payment",
+    "subtype_fee_debit_failed": "Fee failed",
+    "subtype_fee_debit_pending": "Pending fee",
+    "subtype_fee_debit_successful": "Fee charged",
+    "subtype_for": "for",
+    "subtype_fund_complete": "Funded account",
+    "subtype_fund_failed": "Failed to fund",
+    "subtype_fund_pending": "Pending fund",
+    "subtype_hotwallet_deposit_failed": "Failed to issue initial supply",
+    "subtype_hotwallet_deposit_pending": "Pending initial supply issue",
+    "subtype_hotwallet_deposit_successful": "Issued initial supply",
+    "subtype_hotwallet_withdraw_failed": "Failed withdrawal from hotwallet",
+    "subtype_hotwallet_withdraw_pending": "Pending withdrawal from hotwallet",
+    "subtype_hotwallet_withdraw_successful": "Withdrawal from hotwallet",
+    "subtype_microdeposit_complete": "Bank account verification",
+    "subtype_microdeposit_failed": "Bank account verification failed",
+    "subtype_microdeposit_pending": "Bank account verification pending",
+    "subtype_purchase_app_complete": "Made an in-app purchase",
+    "subtype_purchase_app_failed": "Failed in-app purchase",
+    "subtype_purchase_app_pending": "Pending in-app purchase",
+    "subtype_purchase_complete": "Made a purchase",
+    "subtype_purchase_failed": "Failed purchase",
+    "subtype_purchase_pending": "Pending purchase",
+    "subtype_purchase_pos_complete": "Made an in-store purchase",
+    "subtype_purchase_pos_failed": "Failed in-store purchase",
+    "subtype_purchase_pos_pending": "Pending in-store purchase",
+    "subtype_receive_distribution_failed": "Failed distribution receive",
+    "subtype_receive_distribution_pending": "Pending distribution receive",
+    "subtype_receive_distribution_successful": "Received distribution",
+    "subtype_receive_failed": "Failed receiving from",
+    "subtype_receive_pending": "Pending payment from",
+    "subtype_receive_refund_failed": "Failed refund receive",
+    "subtype_receive_refund_pending": "Pending refund receive",
+    "subtype_receive_refund_successful": "Received refund",
+    "subtype_receive_successful": "Received from",
+    "subtype_request_credit_failed": "Cancelled request to",
+    "subtype_request_credit_pending": "Request to",
+    "subtype_request_credit_successful": "Received from request to",
+    "subtype_request_debit_failed": "Declined request from",
+    "subtype_request_debit_pending": "Request from",
+    "subtype_request_debit_successful": "Paid request from",
+    "subtype_reward_credit_successful": "Received a reward",
+    "subtype_reward_debit_successful": "A reward was claimed",
+    "subtype_reward_failed": "Failed reward",
+    "subtype_reward_pending": "Pending reward",
+    "subtype_sale_app_complete": "Made an in-app sale",
+    "subtype_sale_app_failed": "Failed in-app sale",
+    "subtype_sale_app_pending": "Pending in-app sale",
+    "subtype_sale_complete": "Made a sale",
+    "subtype_sale_failed": "Failed sale",
+    "subtype_sale_pending": "Pending sale",
+    "subtype_sale_pos_complete": "Made an in-store sale",
+    "subtype_sale_pos_failed": "Failed in-store sale",
+    "subtype_sale_pos_pending": "Pending in-store sale",
+    "subtype_sell_failed": "Failed to sell",
+    "subtype_sell_pending": "Pending sell of",
+    "subtype_send_failed": "Failed sending to",
+    "subtype_send_otp_failed": "Failed OTP payment",
+    "subtype_send_otp_pending": "Pending OTP payment",
+    "subtype_send_otp_successful": "OTP payment",
+    "subtype_send_pending": "Pending payment to",
+    "subtype_send_rain_payment_failed": "Failed payment to",
+    "subtype_send_rain_payment_fx_failed": "Failed payment to",
+    "subtype_send_rain_payment_fx_pending": "Pending payment to",
+    "subtype_send_rain_payment_fx_successful": "Payment to",
+    "subtype_send_rain_payment_pending": "Pending payment to",
+    "subtype_send_rain_payment_successful": "Payment to",
+    "subtype_send_refund_failed": "Failed refund send",
+    "subtype_send_refund_pending": "Pending refund send",
+    "subtype_send_refund_successful": "Sent refund",
+    "subtype_send_successful": "Sent to",
+    "subtype_sold": "Sold",
+    "subtype_tip_credit_failed": "Failed receiving tip",
+    "subtype_tip_credit_pending": "Pending tip receive",
+    "subtype_tip_credit_successful": "Received tip",
+    "subtype_tip_debit_failed": "Failed tip payment",
+    "subtype_tip_debit_pending": "Pending tip payment",
+    "subtype_tip_debit_successful": "Paid tip",
+    "subtype_top_up_credit_failed": "Failed top up from",
+    "subtype_top_up_credit_pending": "Pending top up from",
+    "subtype_top_up_credit_successful": "Top up from",
+    "subtype_top_up_debit_failed": "Failed top up to",
+    "subtype_top_up_debit_pending": "Pending top up to",
+    "subtype_top_up_debit_successful": "Top up to",
+    "subtype_transfer_credit_failed": "Failed transfer from",
+    "subtype_transfer_credit_pending": "Pending transfer from",
+    "subtype_transfer_credit_successful": "Transfer from",
+    "subtype_transfer_debit_failed": "Failed transfer to",
+    "subtype_transfer_debit_pending": "Pending transfer to",
+    "subtype_transfer_debit_successful": "Transfer to",
+    "subtype_withdraw_failed": "Failed withdrawal to ",
+    "subtype_withdraw_mukuru_cancelled": "Cancelled withdrawal to ",
+    "subtype_withdraw_mukuru_failed": "Failed withdrawal to ",
+    "subtype_withdraw_mukuru_pending": "Pending withdrawal to ",
+    "subtype_withdraw_mukuru_successful": "Withdrawal to ",
+    "subtype_withdraw_pending": "Pending withdrawal to ",
+    "subtype_withdraw_successful": "Withdrawal to ",
+    "subtype_withdraw_teller_failed": "Failed loading balance for",
+    "subtype_withdraw_teller_pending": "Pending loading balance for",
+    "subtype_withdraw_teller_successful": "Loaded balance for",
+    "claimDeposit": {
+      "title": "Finish this deposit",
+      "description": "This deposit is waiting for you to approve it on-chain. You pay the network fee.",
+      "descriptionWithFee": "This deposit is waiting for you to approve it on-chain. The network fee is {{fee}}.",
+      "action": "Approve deposit",
+      "sheetTitle": "Approve deposit",
+      "dismiss": "Close",
+      "signingTitle": "Approving your deposit",
+      "signingDescription": "Keep the app open until this finishes.",
+      "retry": "Try approving again",
+      "cancel": "Close"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "displayCurrency": {
+      "title": "Display currency",
+      "placeholder": "Select a currency",
+      "loadError": "Couldn't load currencies. Try again.",
+      "updateError": "Couldn't update the display currency. Try again."
+    },
+    "bankAccounts": {
+      "title": "Bank accounts",
+      "description": "Where your withdrawals go"
+    },
+    "cryptoBeneficiaries": {
+      "title": "Crypto wallets",
+      "description": "Saved addresses for crypto sends",
+      "wallet": "Crypto wallet",
+      "add": "Add wallet",
+      "addTitle": "Add crypto wallet",
+      "editTitle": "Edit crypto wallet",
+      "save": "Save wallet",
+      "cancel": "Cancel",
+      "delete": "Delete wallet",
+      "deleteTitle": "Delete crypto wallet?",
+      "deleteBody": "{{name}} will be removed from your saved wallets.",
+      "deleteError": "Couldn't delete this wallet. Try again.",
+      "saveError": "Couldn't save this wallet. Check the details and try again.",
+      "emptyTitle": "No saved crypto wallets",
+      "emptyBody": "Save an address to reuse it when sending crypto.",
+      "verifiedOnly": "You can only send to verified wallets.",
+      "formIntro": "Check the network and address before saving.",
+      "sections": {
+        "walletDetails": "Wallet details",
+        "ownership": "Ownership"
+      },
+      "placeholders": {
+        "name": "e.g. My Ledger",
+        "address": "Paste the wallet address",
+        "memo": "Enter the Stellar memo",
+        "network": "Choose a network",
+        "networkNeedsAddress": "Enter an address first"
+      },
+      "fields": {
+        "name": "Wallet name",
+        "address": "Wallet address",
+        "network": "Network",
+        "environment": "Environment",
+        "environments": {
+          "mainnet": "Mainnet",
+          "testnet": "Testnet"
+        },
+        "memo": "Stellar memo (optional)",
+        "walletType": "Wallet type",
+        "owner": "Who owns this wallet?",
+        "self": "I do",
+        "third": "Someone else",
+        "ownerType": "Owner type",
+        "fullName": "Owner full name",
+        "companyName": "Company name",
+        "addressLine1": "Address line 1",
+        "addressLine2": "Address line 2 (optional)",
+        "city": "City",
+        "state": "State or province",
+        "postalCode": "Postal code",
+        "country": "Country",
+        "ownership": "I confirm that I own or control this wallet."
+      },
+      "scanAddress": "Scan a QR code"
+    },
+    "mukuruRecipients": {
+      "title": "Mukuru recipients",
+      "description": "Mobile wallet and cash pickup"
+    },
+    "smartWallet": {
+      "title": "Smart wallet",
+      "description": "Addresses and recovery key",
+      "addressesTitle": "Addresses",
+      "addressLabel": "Wallet address",
+      "signerLabel": "Signer address",
+      "copy": "Copy {{label}}",
+      "copied": "Copied to clipboard",
+      "recoveryTitle": "Recovery key",
+      "export": "Export recovery key",
+      "exportExplainer": "Your recovery key gives full access to your funds. Export it only for backup and store it somewhere safe.",
+      "exportOnWebExplainer": "You can only export your recovery key from the web app.",
+      "openWebApp": "Open the web app",
+      "exportError": "Couldn't export the recovery key. Try again."
+    },
+    "sections": {
+      "preferences": "Preferences",
+      "securityPrivacy": "Security & privacy"
+    },
+    "language": {
+      "label": "Language",
+      "unavailable": "This language is not available for this wallet.",
+      "updateError": "Couldn't update the language. Try again.",
+      "manualRestart": "Restart the app to apply the new layout direction."
+    },
+    "notifications": {
+      "label": "Notifications",
+      "description": "Push, email, and SMS alerts"
+    },
+    "twoFactor": {
+      "label": "Two-factor authentication",
+      "description": "An extra code when you sign in"
+    },
+    "appLock": {
+      "label": "App lock",
+      "description": "Face ID, fingerprint or passcode when you return",
+      "promptTitle": "Unlock wallet",
+      "promptSubtitle": "Confirm it's you to continue",
+      "cancel": "Cancel",
+      "devicePasscode": "Use device passcode",
+      "unlockTitle": "Wallet locked",
+      "unlockDescription": "Use your device to continue.",
+      "unlockAction": "Unlock wallet",
+      "useAnotherAccount": "Use another account",
+      "notAvailable": "App lock isn't available on this device.",
+      "notEnrolled": "Set up biometrics or a passcode in your device settings.",
+      "failed": "Couldn't verify your identity. Try again.",
+      "logoutFailed": "We couldn't switch accounts. Check your connection and try again.",
+      "preparing": "Checking what this device supports"
+    },
+    "hideSensitive": {
+      "label": "Hide sensitive data",
+      "description": "Hide balances and amounts"
+    },
+    "changePassword": {
+      "title": "Change password",
+      "description": "Use a strong password you don't use elsewhere.",
+      "currentLabel": "Current password",
+      "currentPlaceholder": "Enter your current password",
+      "newLabel": "New password",
+      "newPlaceholder": "At least 8 characters",
+      "confirmLabel": "Confirm new password",
+      "confirmPlaceholder": "Enter the new password again",
+      "toggle": "Show or hide password",
+      "submit": "Update password",
+      "success": "Your password has been changed.",
+      "error": "Couldn't change your password. Check your current password.",
+      "errors": {
+        "currentRequired": "Enter your current password.",
+        "newMin": "Use at least 8 characters.",
+        "different": "Your new password must be different from your current password.",
+        "confirmRequired": "Confirm your new password.",
+        "match": "The passwords don't match."
+      }
+    },
+    "terms": "Terms of use",
+    "privacy": "Privacy policy",
+    "password": {
+      "label": "Password",
+      "rowDescription": "The password you use to sign in"
+    },
+    "versionValue": "Version {{version}}",
+    "sessions": {
+      "title": "Active sessions",
+      "rowDescription": "Devices signed in to your account",
+      "description": "Review where you're signed in and end sessions you don't recognize.",
+      "session": "Signed-in session",
+      "thisDevice": "This device",
+      "current": "Current",
+      "started": "Started {{started}} · expires {{expires}}",
+      "startedNoExpiry": "Started {{started}} · doesn't expire",
+      "revoke": "End",
+      "revokeConfirmTitle": "End this session?",
+      "revokeConfirmBody": "This session will be signed out now.",
+      "revokeConfirmUnknown": "This may end your current session and sign you out.",
+      "revokedOne": "Session ended.",
+      "revokeError": "Couldn't end that session. Try again.",
+      "revokeOthers": "End all other sessions",
+      "revokeOthersConfirmTitle": "End all other sessions?",
+      "revokeOthersConfirmBody": "All other devices will be signed out. You'll stay signed in here.",
+      "revokeOthersConfirm": "End other sessions",
+      "revokedOthers": "Other sessions ended.",
+      "currentUnknown": "We couldn't identify this device, so you can't end all other sessions. Ending one may sign you out.",
+      "emptyTitle": "No active sessions",
+      "emptyBody": "Sessions appear here once you sign in."
+    },
+    "otaValue": "OTA {{update}}"
+  },
+  "onboarding": {
+    "skip": "Skip",
+    "addEmail": {
+      "title": "Add your email",
+      "message": "We need an email address for your account before you can continue.",
+      "label": "Email address",
+      "placeholder": "you@example.com",
+      "submit": "Add email",
+      "invalid": "That email doesn't look right",
+      "error": "Couldn't add that email. Try again.",
+      "help": "We'll send a link there to confirm it."
+    },
+    "addMobile": {
+      "title": "Add your phone number",
+      "message": "We need a phone number for your account before you can continue.",
+      "label": "Phone number",
+      "submit": "Add phone number",
+      "invalid": "That phone number doesn't look right",
+      "error": "Couldn't add that number. Try again.",
+      "help": "Include the country code. We'll text a code to confirm it."
+    },
+    "verifyEmail": {
+      "title": "Confirm your email",
+      "message": "Open the link sent to {{email}}, then return here.",
+      "messageNoEmail": "Open the verification link, then return here.",
+      "continue": "I've verified my email",
+      "resend": "Resend email",
+      "resent": "Verification email sent.",
+      "notYet": "We haven't confirmed it yet. Open the link and try again.",
+      "syncError": "Couldn't check your verification. Try again.",
+      "resendError": "Couldn't resend the email. Try again.",
+      "help": "Check your spam folder or resend the link."
+    },
+    "verifyMobile": {
+      "title": "Confirm your number",
+      "message": "Enter the 5-digit code we sent to {{mobile}}.",
+      "messageNoMobile": "Enter the 5-digit code we sent to your mobile.",
+      "resend": "Resend code",
+      "verifying": "Verifying…",
+      "resent": "A new code is on its way.",
+      "notYet": "Couldn't confirm that code. Try again.",
+      "errorFallback": "That code didn't work. Try again.",
+      "resendError": "Couldn't resend the code. Try again.",
+      "help": "Codes can take up to a minute to arrive."
+    },
+    "enrolMfa": {
+      "title": "Protect your account",
+      "message": "Add an extra layer of security to sign-ins and sensitive transactions."
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "navigationLabel": "Profile",
+    "sections": {
+      "personal": "Personal details",
+      "payments": "Payment details",
+      "app": "Support",
+      "session": "Account",
+      "data": "Account and data"
+    },
+    "menu": {
+      "personalInfo": "Personal info",
+      "personalInfoDescription": "Name, date of birth and more",
+      "emailPhone": "Email & phone",
+      "emailPhoneDescription": "Email and phone numbers",
+      "address": "Address",
+      "addressDescription": "Your residential address",
+      "documents": "Documents",
+      "documentsDescription": "Uploaded documents",
+      "limits": "Limits & fees",
+      "limitsDescription": "Your limits and the fees you pay",
+      "support": "Contact support",
+      "contactUnverified": "Unverified",
+      "documentsState": {
+        "actionNeeded": "Action needed",
+        "pending": "Pending review",
+        "verified": "Verified",
+        "none": "None"
+      }
+    },
+    "limits": {
+      "title": "Limits & fees",
+      "asset": "Currency",
+      "direction": {
+        "debit": "Money out",
+        "credit": "Money in"
+      },
+      "genericFee": {
+        "debit": "Outgoing fee",
+        "credit": "Incoming fee"
+      },
+      "loadError": "Couldn't load this direction.",
+      "supportPrompt": "Need different limits?",
+      "supportCta": "Contact support",
+      "emptyTitle": "No accounts yet",
+      "emptyMessage": "Limits and fees appear here once you hold a balance.",
+      "methodNote": "Some methods have their own fees and limits.",
+      "noFee": "None",
+      "noLimits": "No limits",
+      "methodLoadError": "We couldn't load fees and limits for this method.",
+      "method": "Method",
+      "allMethods": "All methods",
+      "methodA11y": {
+        "debit": "Money out method",
+        "credit": "Money in method"
+      }
+    },
+    "documents": {
+      "title": "Documents",
+      "listTitle": "Your documents",
+      "empty": "No documents uploaded yet",
+      "loadError": "Couldn't load your documents.",
+      "open": "Open",
+      "untyped": "Document",
+      "typeFallback": "Type {{id}}",
+      "uploadTitle": "Upload a document",
+      "typePlaceholder": "Document type",
+      "chooseFile": "Choose file",
+      "upload": "Upload",
+      "uploadDone": "Document uploaded",
+      "uploadError": "Couldn't upload the document. Try again.",
+      "pickError": "Couldn't open the file picker. Try again.",
+      "fileTooLarge": "That file is too large (max 10MB).",
+      "noTypes": "Document uploads aren't available right now.",
+      "typesError": "Couldn't load document types.",
+      "retry": "Retry",
+      "status": {
+        "verified": "Verified",
+        "declined": "Declined",
+        "pending": "Pending",
+        "paused": "Paused",
+        "incomplete": "Incomplete",
+        "obsolete": "Obsolete",
+        "not_started": "Not started"
+      },
+      "multiFileUnsupported": "{{types}} needs multiple files. Upload it through support."
+    },
+    "picture": {
+      "title": "Profile picture",
+      "choose": "Choose photo",
+      "save": "Save",
+      "done": "Profile picture updated",
+      "error": "Couldn't update your picture. Try again.",
+      "permissionDenied": "Photo library access is needed to choose a picture.",
+      "pickError": "Couldn't open the photo picker. Try again.",
+      "fileTooLarge": "That image is too large (max 5MB)."
+    },
+    "contact": {
+      "title": "Email & phone",
+      "primary": "Primary",
+      "verified": "Verified",
+      "unverified": "Unverified",
+      "loadError": "Couldn't load this list.",
+      "retry": "Retry",
+      "footnote": "Your account keeps one email address and one phone number. Changing either one replaces it.",
+      "emails": {
+        "title": "Email addresses",
+        "empty": "No emails added yet",
+        "add": "Add email",
+        "addLabel": "New email address",
+        "placeholder": "you@example.com",
+        "invalid": "Enter a valid email address"
+      },
+      "mobiles": {
+        "title": "Mobile numbers",
+        "empty": "No mobile numbers added yet",
+        "add": "Add mobile",
+        "addLabel": "New mobile number",
+        "invalid": "Enter a valid mobile number"
+      },
+      "add": {
+        "error": "Couldn't add that. Try again.",
+        "emailDone": "Email added",
+        "mobileDone": "Mobile number added"
+      },
+      "change": {
+        "emailAction": "Change email address",
+        "mobileAction": "Change phone number",
+        "emailTitle": "Change your email address",
+        "mobileTitle": "Change your phone number",
+        "emailBody": "Saving a new address replaces {{value}}. You'll need to verify the new one.",
+        "mobileBody": "Saving a new number replaces {{value}}. You'll need to verify the new one.",
+        "emailLabel": "New email address",
+        "mobileLabel": "New phone number",
+        "cancel": "Cancel",
+        "emailConfirm": "Save email",
+        "mobileConfirm": "Save number",
+        "emailDone": "Email address changed",
+        "mobileDone": "Phone number changed",
+        "error": "Couldn't change that. Try again.",
+        "partial": {
+          "added": "Saved the new one, but couldn't switch to it yet. Both are listed below.",
+          "promoted": "Switched to the new one, but couldn't remove the old one. Remove it below."
+        }
+      },
+      "setPrimary": {
+        "action": "Make primary",
+        "done": "Primary updated",
+        "error": "Couldn't set as primary. Try again."
+      },
+      "delete": {
+        "label": "Delete",
+        "title": "Remove this contact?",
+        "body": "{{value}} will be removed from your account.",
+        "cancel": "Cancel",
+        "confirm": "Remove",
+        "error": "Couldn't remove that. Try again.",
+        "emailDone": "Email removed",
+        "mobileDone": "Mobile number removed"
+      },
+      "verify": {
+        "action": "Verify",
+        "error": "Couldn't verify the code. Check it and try again.",
+        "resendError": "Couldn't resend. Try again.",
+        "mobileTitle": "Verify mobile number",
+        "mobileHelp": "Enter the code we sent to {{value}}.",
+        "mobileDone": "Mobile number verified",
+        "notYet": "Number not verified. Request a new code and try again.",
+        "otpLabel": "Verification code",
+        "submit": "Verify",
+        "resend": "Resend code",
+        "resentMobile": "A new code was sent to {{value}}",
+        "resentEmail": "A verification link was sent to {{value}}"
+      }
+    },
+    "closeAccount": {
+      "title": "Close account",
+      "description": "Request permanent deletion",
+      "body": "Withdraw any balance first. Closing permanently deletes your profile and wallet access. We'll email you to confirm; processing may take a few days.",
+      "confirm": "Request deletion",
+      "deleteDone": "Check your email to confirm deletion.",
+      "deactivateTitle": "Deactivate account",
+      "deactivateDescription": "Temporarily disable wallet access",
+      "deactivateBody": "Deactivation blocks wallet access but keeps your data. We'll email you to confirm. Support can reactivate it later.",
+      "deactivateConfirm": "Request deactivation",
+      "deactivateDone": "Check your email to confirm deactivation.",
+      "error": "Couldn't send the request. Try again.",
+      "errorWithSupport": "Couldn't send the request. Try again or contact {{email}}."
+    },
+    "details": {
+      "title": "Personal information",
+      "save": "Save",
+      "error": "Couldn't save your details. Try again.",
+      "required": "This field is required.",
+      "fields": {
+        "first_name": {
+          "label": "First name",
+          "placeholder": "e.g. Ada"
+        },
+        "middle_name": {
+          "label": "Middle name",
+          "placeholder": "e.g. Alexander"
+        },
+        "last_name": {
+          "label": "Last name",
+          "placeholder": "e.g. Lovelace"
+        },
+        "birth_date": {
+          "label": "Date of birth",
+          "placeholder": "Select your date of birth"
+        },
+        "nationality": {
+          "label": "Nationality",
+          "placeholder": "Select a country"
+        },
+        "residency": {
+          "label": "Country of residence",
+          "placeholder": "Select a country"
+        },
+        "gender": {
+          "label": "Gender",
+          "placeholder": "Select",
+          "options": {
+            "male": "Male",
+            "female": "Female",
+            "other": "Other",
+            "not_specified": "Prefer not to say"
+          }
+        },
+        "title": {
+          "label": "Title",
+          "placeholder": "Select",
+          "options": {
+            "mr": "Mr",
+            "mrs": "Mrs",
+            "ms": "Ms",
+            "mx": "Mx"
+          }
+        },
+        "marital_status": {
+          "label": "Marital status",
+          "placeholder": "Select",
+          "options": {
+            "single": "Single",
+            "married": "Married",
+            "divorced": "Divorced",
+            "widowed": "Widowed"
+          }
+        },
+        "id_number": {
+          "label": "ID number",
+          "placeholder": "Your national ID or passport number"
+        },
+        "fathers_name": {
+          "label": "Father's name",
+          "placeholder": "e.g. John"
+        },
+        "mothers_name": {
+          "label": "Mother's name",
+          "placeholder": "e.g. Maria"
+        },
+        "grandfathers_name": {
+          "label": "Grandfather's name",
+          "placeholder": "e.g. Robert"
+        },
+        "grandmothers_name": {
+          "label": "Grandmother's name",
+          "placeholder": "e.g. Elena"
+        },
+        "central_bank_number": {
+          "label": "Central bank number",
+          "placeholder": "e.g. 0012345678"
+        }
+      }
+    },
+    "address": {
+      "title": "Residential address",
+      "save": "Save",
+      "error": "Couldn't save your address. Try again.",
+      "line1": {
+        "label": "Address line 1",
+        "placeholder": "Street address"
+      },
+      "line2": {
+        "label": "Address line 2",
+        "placeholder": "Apartment, suite, etc. (optional)"
+      },
+      "city": {
+        "label": "City",
+        "placeholder": "e.g. Kansas City"
+      },
+      "stateProvince": {
+        "label": "State / province",
+        "placeholder": "State or province (optional)"
+      },
+      "postalCode": {
+        "label": "Postal code",
+        "placeholder": "e.g. 64108"
+      },
+      "country": {
+        "label": "Country",
+        "placeholder": "Select a country"
+      },
+      "errors": {
+        "line1": "Enter your street address.",
+        "city": "Enter your city.",
+        "postalCode": "Enter your postal code.",
+        "country": "Select your country."
+      }
+    }
+  },
+  "transfer": {
+    "action": {
+      "receive": "Receive",
+      "request": "Request",
+      "deposit": "Add funds",
+      "withdraw": "Cash out",
+      "send": "Send"
+    },
+    "addMoney": {
+      "title": "Receive",
+      "eyebrow": "CHOOSE HOW TO RECEIVE",
+      "description": "Choose how to receive {{code}}.",
+      "methodTitle": "How do you want to receive money?",
+      "methodDescription": "Choose a method to see the details you need.",
+      "bankHeading": "BANK",
+      "cryptoHeading": "CRYPTO",
+      "requestHeading": "REQUEST",
+      "bankDetailTitle": "Bank transfer",
+      "crypto": {
+        "title": "Crypto transfer",
+        "subtitle": "Choose a network for your address."
+      },
+      "peer": {
+        "title": "Account ID",
+        "subtitle": "Get paid using your account ID or QR code."
+      },
+      "deposit": {
+        "title": "Bank transfer",
+        "description": "Share your bank details."
+      }
+    },
+    "actions": {
+      "loadError": "Couldn't load available actions."
+    },
+    "result": {
+      "success": {
+        "title": "On its way"
+      },
+      "failed": {
+        "title": "Something went wrong"
+      },
+      "viewTransaction": "View receipt",
+      "done": "Done",
+      "tryAgain": "Try again"
+    },
+    "amount": {
+      "swap": "Switch entry currency"
+    },
+    "currencyLoadError": "Couldn't load currency details. Try again.",
+    "beneficiaries": {
+      "title": "Saved wallets",
+      "useNew": "Use a new address",
+      "add": "Add wallet",
+      "loadError": "Couldn't load saved wallets. Enter a new address instead."
+    },
+    "fees": {
+      "rail": {
+        "deposit_ach_push": "ACH transfer",
+        "deposit_wire": "Wire transfer",
+        "deposit_sepa": "SEPA transfer",
+        "deposit_spei": "SPEI transfer",
+        "deposit_pix": "PIX transfer",
+        "deposit_beac": "BEAC transfer",
+        "receive_deposit_beac": "BEAC transfer",
+        "receive_deposit_manual": "SWIFT transfer",
+        "withdraw_ach": "ACH withdrawal fee",
+        "withdraw_wire": "Wire withdrawal fee",
+        "withdraw_sepa": "SEPA withdrawal fee",
+        "withdraw_spei": "SPEI withdrawal fee",
+        "withdraw_pix": "PIX withdrawal fee",
+        "withdraw_mukuru": "Mukuru"
+      }
+    },
+    "limits": {
+      "title": "Limits",
+      "type": {
+        "min": "Minimum",
+        "max": "Maximum per transaction",
+        "day_max": "Maximum per day",
+        "week_max": "Maximum per week",
+        "month_max": "Maximum per month",
+        "overdraft": "Overdraft"
+      },
+      "rail": {
+        "deposit_ach_push": "ACH",
+        "deposit_wire": "Wire",
+        "deposit_sepa": "SEPA",
+        "deposit_spei": "SPEI",
+        "deposit_pix": "PIX",
+        "receive_deposit_manual": "SWIFT",
+        "withdraw_mukuru": "Mukuru"
+      },
+      "help": "Contact support about your limits",
+      "dismiss": "Close limits"
+    },
+    "chain": {
+      "solana": "Solana",
+      "base": "Base",
+      "ethereum": "Ethereum",
+      "stellar": "Stellar",
+      "tron": "Tron",
+      "polygon": "Polygon",
+      "arbitrum": "Arbitrum",
+      "optimism": "Optimism"
+    },
+    "receive": {
+      "title": "Receive {{code}}",
+      "instruction": "Share your account ID to receive {{code}}.",
+      "accountLabel": "Account ID",
+      "copy": "Copy",
+      "copyLink": "Copy link",
+      "copied": "Copied to clipboard",
+      "copiedLink": "Link copied",
+      "copiedId": "Account ID copied",
+      "linkLabel": "Link",
+      "share": {
+        "button": "Share",
+        "copied": "Link copied to clipboard"
+      },
+      "crypto": {
+        "selectNetwork": "Network",
+        "networkTitle": "Choose a network",
+        "networkHelp": "The sender must use the same network.",
+        "chooseNetwork": "Select network",
+        "noNetworkTitle": "Select a network to continue",
+        "noNetworkBody": "Your deposit address will appear after you choose.",
+        "qrA11y": "QR code for your {{token}} deposit address on {{network}}",
+        "addressLabel": "Deposit address",
+        "addressCopied": "Address copied",
+        "memoLabel": "Memo",
+        "memoCopied": "Memo copied",
+        "fetchError": "Couldn't load your deposit address. Try again.",
+        "warningTitle": "Only send {{token}} on {{network}}",
+        "warningBody": "The wrong asset or network can cause permanent loss.",
+        "memoWarning": "Include the memo or your deposit may need manual credit.",
+        "share": "Send {{token}} on {{network}} to:\n{{address}}",
+        "shareWithMemo": "Send {{token}} on {{network}} to:\n{{address}}\n\nMemo: {{memo}}"
+      },
+      "instructionWithAmount": "Send {{amount}} {{code}} to my account ID below.",
+      "request": {
+        "toggle": "Request a specific amount",
+        "amountLabel": "Amount",
+        "clear": "Remove amount",
+        "invalidAmount": "Enter a valid amount"
+      }
+    },
+    "deposit": {
+      "title": "Add {{code}}",
+      "copied": "{{label}} copied",
+      "copiedAll": "Bank details copied",
+      "detailsLabel": "Bank details",
+      "actions": {
+        "copyAll": "Copy details",
+        "share": "Share"
+      },
+      "details": {
+        "title": {
+          "USD": "Your US bank account",
+          "EUR": "Your European bank account",
+          "GBP": "Your UK bank account",
+          "MXN": "Your Mexican bank account",
+          "BRL": "Your Brazilian bank account",
+          "default": "Your bank account"
+        },
+        "instruction": {
+          "USD": "Send USD by ACH or domestic wire. It converts to {{code}} automatically.",
+          "EUR": "Send EUR by SEPA. It converts to {{code}} and usually arrives in 1–2 business days.",
+          "GBP": "Send GBP by Faster Payments. It converts to {{code}} automatically.",
+          "MXN": "Send MXN by SPEI. It converts to {{code}}, usually within minutes.",
+          "BRL": "Pay with PIX. It converts to {{code}} instantly.",
+          "default": "Send money to the account below. It arrives as {{code}}."
+        },
+        "transferMethod": {
+          "USD": "For ACH and wire transfers",
+          "EUR": "For SEPA transfers",
+          "GBP": "For Faster Payments",
+          "MXN": "For SPEI transfers",
+          "BRL": "For PIX payments",
+          "SWIFT": "For SWIFT transfers",
+          "default": "For bank transfers"
+        }
+      },
+      "createError": "Couldn't generate deposit details. Try again.",
+      "loadError": "Couldn't load your deposit details. Try again.",
+      "source": {
+        "eyebrow": "From a bank",
+        "footnote": "Deposits convert to {{code}} automatically.",
+        "option": {
+          "USD": {
+            "title": "US bank transfer",
+            "subtitle": "ACH & wire"
+          },
+          "EUR": {
+            "title": "EU bank transfer",
+            "subtitle": "SEPA"
+          },
+          "GBP": {
+            "title": "UK bank transfer",
+            "subtitle": "Faster Payments"
+          },
+          "MXN": {
+            "title": "Mexican bank transfer",
+            "subtitle": "SPEI"
+          },
+          "BRL": {
+            "title": "Brazilian bank transfer",
+            "subtitle": "PIX"
+          },
+          "default": {
+            "title": "{{code}} bank transfer"
+          }
+        }
+      },
+      "paymentType": {
+        "title": "Is this an international payment?",
+        "subtitle": "We'll show the right account details.",
+        "local": "Local payment",
+        "international": "International payment",
+        "localHint": {
+          "USD": "ACH or domestic wire transfers",
+          "EUR": "SEPA transfers within Europe",
+          "GBP": "Faster Payments within the UK",
+          "MXN": "SPEI transfers within Mexico",
+          "default": "Local bank transfers"
+        },
+        "internationalHint": "SWIFT payments from abroad"
+      },
+      "creating": "Setting up your deposit account…",
+      "creatingHint": "This usually takes a few moments.",
+      "createFailed": "Couldn't create your deposit details. Try again or contact support.",
+      "createdNoDetails": "Your account is ready, but its details aren't. Refresh to try again.",
+      "field": {
+        "ownerName": "Account holder",
+        "iban": "IBAN",
+        "number": "Account number",
+        "routing_number": "Routing number",
+        "type": "Account type",
+        "bank_name": "Bank name",
+        "swift": "SWIFT",
+        "bic": "BIC",
+        "sort_code": "Sort code",
+        "clabe": "CLABE",
+        "pix_key": "PIX key",
+        "bank_code": "Bank code",
+        "branch_code": "Branch code",
+        "branch_address": "Branch address",
+        "ownerAddress": "Account holder address"
+      },
+      "pix": {
+        "qrTitle": "PIX QR code",
+        "codeTitle": "Pix Copia e Cola"
+      },
+      "documents": {
+        "title": "Documents",
+        "subtitle": "PDF",
+        "downloadFailed": "Couldn't download the document. Try again."
+      },
+      "fees": {
+        "title": "Fees",
+        "generic": "Deposit fee",
+        "free": "Free"
+      },
+      "limits": {
+        "title": "Limits"
+      },
+      "rate": {
+        "title": "Exchange rate",
+        "currentLabel": "Current rate*",
+        "disclaimer": "*Rates are estimates and include exchange fees. Your final rate may change with the market."
+      },
+      "about": {
+        "trigger": "About this account",
+        "poweredBy": "Powered by Bridge",
+        "description": {
+          "USD": "A dedicated Bridge account for ACH and wire deposits. USD converts to {{code}} automatically.",
+          "EUR": "A dedicated Bridge account for SEPA deposits. EUR converts to {{code}} and usually arrives in 1–2 business days.",
+          "MXN": "A dedicated Bridge account for SPEI deposits. MXN converts to {{code}}, usually within minutes.",
+          "BRL": "A dedicated Bridge account for PIX deposits. BRL converts to {{code}} instantly.",
+          "default": "A dedicated Bridge account. Deposits convert to {{code}} automatically."
+        },
+        "security": "Protected with encryption and regulatory safeguards.",
+        "terms": "View Bridge Terms"
+      },
+      "notAvailable": {
+        "title": "Deposit unavailable",
+        "body": "This currency doesn't support deposits yet. Contact support if you think it should.",
+        "contact": "Contact support"
+      }
+    },
+    "bankDestination": {
+      "sections": {
+        "selectable": "Available accounts",
+        "pending": "Awaiting verification",
+        "pendingHint": "You can pay these once they're verified."
+      },
+      "needsAttention": "Check your declined accounts",
+      "needsAttentionA11y": "Check your declined bank accounts"
+    },
+    "withdraw": {
+      "title": "Withdraw {{code}}",
+      "bankFallback": "Bank account",
+      "bankUnavailableTitle": "This bank account isn't available",
+      "bankUnavailableBody": "You can't pay it from the account you're sending from.",
+      "chooseAnotherBank": "Choose another recipient",
+      "changeBankA11y": "Change bank account",
+      "changeBankSheet": {
+        "title": "Change bank account",
+        "dismiss": "Close bank picker"
+      },
+      "max": "Max",
+      "summary": {
+        "feeFree": "Free",
+        "arrives": "Arrives",
+        "arrivesToday": "Today",
+        "arrivesTomorrow": "Tomorrow, {{date}}",
+        "arrivesBy": "By {{date}}"
+      },
+      "cta": "Withdraw {{amount}}",
+      "feeGeneric": "Withdrawal fee",
+      "feesLoadError": "Couldn't load fee and limit information.",
+      "limits": {
+        "title": "Limits"
+      },
+      "error": "Couldn't submit the withdrawal. Try again.",
+      "selectBank": "Select a bank account",
+      "invalidAmount": "Enter a valid amount",
+      "insufficient": "Amount exceeds your balance",
+      "addBank": "Add bank account",
+      "loadError": "Couldn't load your bank accounts. Try again.",
+      "methodLabel": "Payment method",
+      "method": {
+        "bank": {
+          "title": "Bank transfer",
+          "subtitle": "Withdraw to a linked bank account"
+        },
+        "mukuru": {
+          "title": "Cash pickup or mobile wallet",
+          "subtitle": "Send with Mukuru"
+        }
+      },
+      "zone": {
+        "ACH": {
+          "name": "ACH Payment",
+          "short": "ACH",
+          "speed": "3–5 days",
+          "description": "Standard bank payment (3-5 business days)"
+        },
+        "WIRE": {
+          "name": "Wire Payment",
+          "short": "Wire",
+          "speed": "Same day",
+          "description": "Same-day wire payment"
+        },
+        "SEPA": {
+          "name": "SEPA Payment",
+          "short": "SEPA",
+          "description": "European bank payment"
+        },
+        "SPEI": {
+          "name": "SPEI Payment",
+          "short": "SPEI",
+          "description": "Mexican bank payment"
+        },
+        "PIX": {
+          "name": "PIX Payment",
+          "short": "PIX",
+          "description": "Brazilian instant payment"
+        },
+        "SWIFT": {
+          "name": "SWIFT Payment",
+          "short": "SWIFT",
+          "description": "International wire payment"
+        },
+        "BEAC": {
+          "name": "BEAC Payment",
+          "short": "BEAC",
+          "description": "Central African bank payment"
+        },
+        "MANUAL": {
+          "name": "Bank Transfer",
+          "short": "Bank transfer",
+          "description": "Manual bank transfer processing"
+        },
+        "EXTERNAL": {
+          "name": "Bank Transfer",
+          "short": "Bank transfer",
+          "description": "Manual bank transfer processing"
+        }
+      },
+      "referenceLabel": "Reference (optional)",
+      "referencePlaceholder": "e.g. Invoice #123",
+      "referenceDismiss": "Close reference",
+      "validation": {
+        "refMaxLength": "Reference must be {{max}} characters or less",
+        "refMinLength": "Reference must be at least {{min}} characters",
+        "refMaxLines": "Reference must be {{max}} lines or less",
+        "refLineLength": "Line {{line}} must be {{max}} characters or less",
+        "refCharsetSepa": "Reference can only contain letters, numbers, spaces, &, -, ., /",
+        "refCharsetAlnum": "Reference can only contain letters, numbers, and spaces",
+        "zoneRequired": "Select a payment method",
+        "limitMin": "Minimum amount is {{limit}}",
+        "limitMax": "Maximum amount is {{limit}}",
+        "limitDayMax": "Amount exceeds the daily limit of {{limit}}",
+        "limitWeekMax": "Amount exceeds the weekly limit of {{limit}}",
+        "limitMonthMax": "Amount exceeds the monthly limit of {{limit}}",
+        "insufficientWithFee": "Amount plus the {{fee}} fee exceeds your balance",
+        "belowFee": "Enter more than the {{fee}} fee"
+      },
+      "methodUnavailableTitle": "This payment method isn't available yet",
+      "methodUnavailableBody": "This method isn't supported in the app. Contact support.",
+      "continue": "Continue",
+      "confirm": {
+        "title": "Confirm withdrawal",
+        "from": "From account",
+        "amount": "Amount",
+        "method": "Payment method",
+        "indicativeRate": "Indicative rate",
+        "youReceive": "You receive ≈",
+        "rateDisclaimer": "*Rates are estimates and include exchange fees. Your final rate may differ.",
+        "total": "Total",
+        "reference": "Reference",
+        "bankDetails": "Bank details",
+        "submit": "Confirm withdrawal",
+        "bank": {
+          "bankName": "Bank name",
+          "accountHolder": "Account holder",
+          "number": "Account number",
+          "routingNumber": "Routing number",
+          "iban": "IBAN",
+          "type": "Account type",
+          "bankCode": "Bank code",
+          "branchCode": "Branch code",
+          "swift": "SWIFT",
+          "bic": "BIC",
+          "clabe": "CLABE",
+          "pixKey": "PIX key",
+          "brCode": "Pix Copia e Cola",
+          "beneficiaryType": "Beneficiary type",
+          "branchAddress": "Branch address"
+        },
+        "paidOut": "Paid out"
+      },
+      "feeIncluded": "inc. {{amount}} fee",
+      "feesLoadRetry": "Try again",
+      "feeBreakdown": {
+        "title": "Fee breakdown",
+        "dismiss": "Close",
+        "send": "You send",
+        "schedule": "How this fee is worked out"
+      }
+    },
+    "send": {
+      "title": "Send",
+      "destination": {
+        "eyebrow": "Who are you sending to?",
+        "description": "Choose how they should receive the money.",
+        "searchPlaceholder": "Search bank, account name, or number",
+        "searchEmpty": "No recipients match “{{query}}”.",
+        "all": "ALL RECIPIENTS",
+        "choose": "PAY DIRECTLY",
+        "direct": "OR PAY DIRECTLY",
+        "continue": "Continue",
+        "change": "Change",
+        "new": {
+          "bankA11y": "Add a bank account recipient",
+          "walletA11y": "Add a crypto wallet recipient"
+        },
+        "bank": {
+          "title": "Bank account",
+          "description": "Send to a linked bank account.",
+          "a11y": "Send to a linked bank account"
+        },
+        "section": {
+          "bank": "BANK ACCOUNTS",
+          "crypto": "CRYPTO WALLETS"
+        }
+      },
+      "recipientTypeLabel": "Recipient type",
+      "type_email": "Email",
+      "type_mobile": "Mobile",
+      "type_account": "Account ID",
+      "type_crypto": "Crypto",
+      "emailLabel": "Recipient email",
+      "emailPlaceholder": "name@example.com",
+      "mobileLabel": "Recipient mobile number",
+      "mobilePlaceholder": "+12025550123",
+      "accountLabel": "Recipient account ID",
+      "accountPlaceholder": "Account ID",
+      "amountLabel": "Amount ({{code}})",
+      "amountHeroLabel": "Amount to send",
+      "max": "Max",
+      "continue": "Review",
+      "success": {
+        "title": "Money on its way",
+        "message": "Your transfer to {{recipient}} is on its way."
+      },
+      "feeGeneric": "Send fee",
+      "feesLoadError": "Couldn't load fee and limit information.",
+      "error": "Couldn't send. Try again.",
+      "confirm": {
+        "title": "Review",
+        "heroLabel": "You're sending",
+        "recipientEmail": "To email",
+        "recipientMobile": "To mobile",
+        "recipientAccount": "To account ID",
+        "recipientAddress": "To address",
+        "amount": "Amount",
+        "from": "From",
+        "network": "Network",
+        "memo": "Memo",
+        "total": "Total",
+        "feeFree": "Free",
+        "submit": "Confirm and send",
+        "note": "Note",
+        "recipientGets": "Recipient gets",
+        "arrives": "Arrives"
+      },
+      "recipientRequired": "Enter a recipient",
+      "noRecipientTypes": "You can't send this currency.",
+      "unavailableTitle": "Sending unavailable",
+      "invalidEmail": "Enter a valid email",
+      "invalidMobile": "Enter a valid international mobile number",
+      "invalidAmount": "Enter a valid amount",
+      "insufficient": "Amount exceeds your balance",
+      "insufficientWithFee": "Amount plus the {{fee}} fee exceeds your balance",
+      "crypto": {
+        "addressLabel": "Recipient address",
+        "addressPlaceholder": "Wallet address",
+        "selectNetwork": "Destination network",
+        "chainRequired": "Select the destination network",
+        "invalidAddress": "Enter a valid wallet address for this currency",
+        "memoLabel": "Memo (optional)",
+        "memoHelp": "Some exchanges require a memo to credit your deposit.",
+        "warning": "Crypto transfers can't be reversed. Check the address and network.",
+        "error": "Couldn't send. Try again.",
+        "beneficiaryName": "{{chain}} beneficiary",
+        "beneficiaryNameGeneric": "Crypto beneficiary"
+      },
+      "selfCustody": {
+        "signingTitle": "Securing your transfer",
+        "description": "Keep this screen open while we authorize and confirm the transfer.",
+        "steps": {
+          "preparing": "Preparing transfer",
+          "authorizing": "Authorizing wallet",
+          "confirming": "Confirming on-chain"
+        },
+        "security": "You stay in control of your wallet.",
+        "phase": {
+          "resolving": "Preparing the transaction…",
+          "building": "Preparing the transaction…",
+          "signing": "Signing with your wallet…",
+          "updating": "Signing with your wallet…",
+          "broadcasting": "Broadcasting to the network…",
+          "monitoring": "Finalizing…"
+        },
+        "errorTitle": "Signing didn't complete",
+        "error": "We couldn't confirm approval. Check Activity before trying again.",
+        "retrySigning": "Try signing again",
+        "cancel": "Cancel",
+        "errors": {
+          "resolve_timeout": "The transfer isn't ready. Your money hasn't moved—try again shortly.",
+          "onchain_dead": "This transfer can't continue. If it still shows as pending in Activity, contact support.",
+          "already_broadcast": "This transfer was already sent. Check Activity before trying again.",
+          "ambiguous_outcome": "We couldn't confirm the result. Check Activity before trying again to avoid sending twice.",
+          "client_unavailable": "We couldn't reach your wallet. No money moved on-chain. Try again or check Activity."
+        }
+      },
+      "noteLabel": "Note (optional)",
+      "notePlaceholder": "What's it for?",
+      "noteTooLong": "Note is too long",
+      "hub": {
+        "question": "Who are you sending to?",
+        "description": "Pick a destination, then choose an amount.",
+        "friend": {
+          "title": "Send to a friend",
+          "description": "Pay by email or phone"
+        },
+        "bank": {
+          "title": "Send to a bank",
+          "description": "Send to a local or international bank"
+        },
+        "crypto": {
+          "title": "Send to a crypto wallet",
+          "description": "Send to any blockchain wallet"
+        },
+        "internal": {
+          "title": "Send to my wallets",
+          "description": "Move money between your wallets"
+        }
+      },
+      "friend": {
+        "question": "Who are you sending to?",
+        "searchPlaceholder": "Search name, email, or phone",
+        "sendTo": "Send to {{recipient}}",
+        "recents": "Recent recipients",
+        "searchEmpty": "No recipients match “{{query}}”",
+        "emptyTitle": "No recent recipients"
+      },
+      "bankFlow": {
+        "question": "Choose a recipient",
+        "addRecipient": "Add a new recipient",
+        "emptyTitle": "No saved recipients",
+        "emptyMessage": "Add a bank account once, then pay it in two taps."
+      },
+      "changeWallet": {
+        "title": "Change wallet",
+        "dismiss": "Close wallet picker"
+      },
+      "changeSource": {
+        "title": "Change account",
+        "dismiss": "Close account picker"
+      },
+      "changeRecipient": {
+        "title": "Change recipient",
+        "dismiss": "Close recipient picker"
+      },
+      "amountEntryA11y": "Amount: {{amount}} {{code}}",
+      "cryptoFlow": {
+        "question": "Choose a wallet",
+        "addWallet": "Add a new wallet",
+        "oneOff": "Or enter a wallet address",
+        "scanWalletA11y": "Scan a QR code to add a wallet",
+        "scan": {
+          "title": "Scan a QR code",
+          "hint": "Point your camera at the code",
+          "close": "Close scanner",
+          "torchOn": "Turn on light",
+          "torchOff": "Turn off light",
+          "primeTitle": "Scanning needs your camera",
+          "primeMessage": "We only use it to read the code. Nothing is recorded or sent anywhere.",
+          "allow": "Allow camera access",
+          "deniedTitle": "Camera access is off",
+          "deniedMessage": "Turn the camera on in your settings to scan a code. You can still add a wallet by typing the address.",
+          "openSettings": "Open settings",
+          "unrecognized": "That's not a wallet address this account can use. Try a different code."
+        }
+      },
+      "internal": {
+        "question": "Move money between your wallets",
+        "fromLabel": "From",
+        "toLabel": "To",
+        "emptyTitle": "No second wallet yet",
+        "empty": "You need another wallet in this currency.",
+        "onchainArrival": "Usually a few minutes"
+      },
+      "feeIncluded": "inc. {{amount}} fee",
+      "belowFee": "Enter more than the {{fee}} fee",
+      "feesLoadRetry": "Try again",
+      "feeBreakdown": {
+        "title": "Fee breakdown",
+        "dismiss": "Close",
+        "send": "You send",
+        "schedule": "How this fee is worked out"
+      }
+    }
+  },
+  "kyc": {
+    "sumsub": {
+      "title": "Verify your identity",
+      "identity": "Identity verification",
+      "opening": "Opening secure verification…",
+      "start": "Start verification",
+      "update": "Update verification",
+      "retryLoad": "Try again",
+      "error": "Couldn't load identity verification. Try again.",
+      "support": "Contact support",
+      "supportNoEmail": "Contact support for next steps.",
+      "refreshFailed": "We couldn't refresh your status just now.",
+      "status": {
+        "not_started": "Not started",
+        "incomplete": "Incomplete",
+        "pending": "In the queue",
+        "under_review": "Under review",
+        "paused": "On hold",
+        "resubmission_requested": "Update needed",
+        "verified": "Verified",
+        "declined": "Not approved",
+        "offboarded": "Account closed",
+        "obsolete": "Account closed"
+      },
+      "statusTitle": {
+        "not_started": "Verify your identity",
+        "incomplete": "Finish verifying your identity",
+        "pending": "Checking your documents",
+        "under_review": "Your account is under review",
+        "paused": "Verification on hold",
+        "resubmission_requested": "We need updated details",
+        "verified": "You're verified",
+        "declined": "Verification not approved",
+        "offboarded": "Account closed",
+        "obsolete": "Account closed"
+      },
+      "statusDescription": {
+        "not_started": "Verify your identity to keep using your wallet.",
+        "incomplete": "Finish your verification to continue.",
+        "pending": "Your documents are submitted and waiting to be checked. This page updates on its own.",
+        "under_review": "Someone is taking a closer look at your account. We'll be in touch when that's done.",
+        "paused": "Nothing is needed from you right now. We'll let you know as soon as that changes.",
+        "resubmission_requested": "We need updated information from you to continue.",
+        "verified": "Your identity has been verified.",
+        "declined": "We couldn't verify your identity.",
+        "offboarded": "This account has been closed. If that looks wrong, support can help.",
+        "obsolete": "This account is no longer active. If that looks wrong, support can help."
+      },
+      "steps": {
+        "submit": "Submit your details",
+        "review": "Review",
+        "verified": "Verified"
+      },
+      "dialogDescription": "Identity verification runs in a secure window from our verification partner."
+    }
+  },
+  "mukuru": {
+    "recipients": {
+      "title": "Mukuru recipients",
+      "empty": {
+        "title": "Send money with Mukuru",
+        "description": "Add a mobile wallet or cash pickup recipient."
+      },
+      "add": {
+        "wallet": "Add Mukuru wallet",
+        "cash": "Add cash pickup recipient"
+      },
+      "edit": {
+        "wallet": "Edit Mukuru wallet",
+        "cash": "Edit cash pickup recipient",
+        "generic": "Edit recipient"
+      },
+      "method": {
+        "wallet": {
+          "title": "Mobile wallet",
+          "subtitle": "Top up a Mukuru mobile wallet"
+        },
+        "cash": {
+          "title": "Cash pickup",
+          "subtitle": "Collect cash at a Mukuru location"
+        }
+      },
+      "fields": {
+        "name": {
+          "label": "Nickname",
+          "placeholder": "e.g. My Mukuru wallet"
+        },
+        "country": {
+          "label": "Country",
+          "placeholder": "Select country"
+        },
+        "mobile": {
+          "label": "Mobile number",
+          "placeholder": "e.g. 77 123 4567",
+          "invalid": "Enter a valid mobile number"
+        },
+        "firstName": {
+          "label": "First name"
+        },
+        "lastName": {
+          "label": "Last name"
+        }
+      },
+      "validation": {
+        "required": "{{field}} is required"
+      },
+      "profileName": {
+        "missing": "Add your first and last name to your profile. Mukuru checks them against your ID.",
+        "complete": "Complete personal information"
+      },
+      "currencyNote": "The recipient receives {{currency}}.",
+      "section": {
+        "method": "Payout method",
+        "details": "Recipient details"
+      },
+      "ownNote": {
+        "wallet": "You can only send to your own Mukuru wallet. Its name must match your profile.",
+        "cash": "Only you can collect the cash. Your profile name must match the ID you show."
+      },
+      "declineReason": "Reason for decline",
+      "decline": {
+        "fallback": "Mukuru couldn't verify this recipient. Check the details and save again."
+      },
+      "status": {
+        "pending": "Pending",
+        "declined": "Declined",
+        "verified": "Verified",
+        "incomplete": "Incomplete",
+        "paused": "Paused",
+        "obsolete": "Obsolete",
+        "not_started": "Not started"
+      },
+      "listItem": {
+        "deleteA11y": "Delete {{name}}"
+      },
+      "submit": {
+        "add": "Add recipient",
+        "save": "Save changes"
+      },
+      "delete": {
+        "title": "Remove this recipient?",
+        "message": "{{name}} will be removed. This can't be undone.",
+        "confirm": "Remove",
+        "cancel": "Cancel"
+      },
+      "toasts": {
+        "added": "Recipient added",
+        "updated": "Recipient updated",
+        "deleted": "Recipient removed"
+      },
+      "errors": {
+        "createFailed": "Couldn't add the recipient. Try again.",
+        "updateFailed": "Couldn't save the changes. Try again.",
+        "deleteFailed": "Couldn't remove the recipient. Try again.",
+        "loadFailed": "Couldn't load this recipient."
+      }
+    },
+    "withdraw": {
+      "title": "Cash out",
+      "recipient": {
+        "label": "To",
+        "add": "Add recipient",
+        "none": "No Mukuru recipients yet",
+        "emptyDescription": "Add a mobile wallet or cash pickup recipient.",
+        "required": "Choose a recipient",
+        "change": "Change",
+        "changeA11y": "Change recipient",
+        "selectTitle": "Choose recipient",
+        "dismissPicker": "Close recipient picker"
+      },
+      "amount": {
+        "label": "Recipient gets",
+        "invalid": "Enter a valid amount",
+        "insufficient": "Not enough {{code}} to cover this transfer and fees"
+      },
+      "purpose": {
+        "label": "Reason for transfer"
+      },
+      "source": {
+        "label": "Source of funds"
+      },
+      "section": {
+        "details": "Transfer details"
+      },
+      "catalogs": {
+        "error": "We couldn't load the transfer options."
+      },
+      "fees": {
+        "error": "We couldn't load the fees for this transfer."
+      },
+      "loadError": "We couldn't load your recipients.",
+      "continue": "Continue",
+      "quote": {
+        "rate": "Exchange rate",
+        "transferFee": "Transfer fee",
+        "total": "Total",
+        "loading": "Calculating transfer details",
+        "error": "We couldn't get a quote. Check the amount and try again.",
+        "retry": "Try again"
+      },
+      "confirm": {
+        "title": "Confirm your transfer",
+        "cta": "Confirm",
+        "back": "Back",
+        "refreshingQuote": "Updating your quote…",
+        "quoteUpdated": "Your quote expired. Review the updated amounts."
+      },
+      "result": {
+        "successTitle": "Cash out complete"
+      },
+      "errors": {
+        "missingToken": "This quote expired. Get a new one and try again.",
+        "submitFailed": "Couldn't complete the withdrawal. You weren't charged. Try again.",
+        "walletNotReady": "Your wallet isn't ready. Wait a moment and try again."
+      },
+      "selfCustody": {
+        "signingTitle": "Securing your cash withdrawal",
+        "description": "Keep this screen open while we authorize and confirm the transfer.",
+        "retry": "Try signing again",
+        "cancel": "Cancel"
+      }
+    },
+    "collection": {
+      "title": "Cash collection code",
+      "generating": {
+        "title": "Getting your collection code…",
+        "description": "Your code will appear here when it's ready."
+      },
+      "ready": {
+        "description": "Show this code with your ID when collecting your cash."
+      },
+      "underReview": {
+        "title": "Under review",
+        "description": "We're reviewing this transfer. Your code will appear once approved."
+      },
+      "failed": {
+        "title": "Transfer failed",
+        "description": "The transfer failed. We'll return the money to your account."
+      },
+      "copied": "Collection code copied",
+      "share": "Share code",
+      "shareMessage": "Cash collection code: {{code}}",
+      "codeLabel": "Collection code",
+      "cashAmountLabel": "Cash amount"
+    }
+  },
+  "notifications": {
+    "title": "Notifications",
+    "viewAll": "View all",
+    "markAllRead": "Mark all read",
+    "markReadError": "Couldn't update the notification. Try again.",
+    "error": "Couldn't load your notifications.",
+    "preferences": {
+      "title": "Notification preferences",
+      "description": "Choose where you hear about your money and your account.",
+      "updateError": "Couldn't update this preference. Try again.",
+      "emptyTitle": "No notification preferences",
+      "emptyBody": "No optional alerts are available.",
+      "channels": {
+        "push": "On this device",
+        "email": "Email",
+        "sms": "Text message"
+      },
+      "events": {
+        "credit_receive": {
+          "title": "Money received",
+          "body": "When someone sends you money."
+        },
+        "credit_deposit": {
+          "title": "Deposit cleared",
+          "body": "When a deposit lands in your account."
+        },
+        "user_kyc_status_verified": {
+          "title": "Identity verified",
+          "body": "When your identity check passes."
+        },
+        "user_kyc_status_change": {
+          "title": "Identity check updates",
+          "body": "When your identity check changes status."
+        },
+        "user_update": {
+          "title": "Account changes",
+          "body": "When your account details change."
+        },
+        "document_update": {
+          "title": "Document updates",
+          "body": "When a document you uploaded is updated."
+        }
+      }
+    },
+    "push": {
+      "title": "Push notifications",
+      "heading": "Alerts on this device",
+      "description": "Get alerts for payments, transfers, and account activity.",
+      "enable": "Enable push notifications",
+      "openSettings": "Open device settings",
+      "enableError": "Couldn't enable push notifications. Try again.",
+      "removeError": "Couldn't remove this device. Try again.",
+      "devicesTitle": "Your devices",
+      "unnamedDevice": "Unknown device",
+      "thisDevice": "This device",
+      "deviceActive": "Receiving notifications",
+      "deviceInactive": "Not receiving notifications",
+      "removeDevice": "Remove device",
+      "status": {
+        "enabled": "Enabled",
+        "enabledBody": "Alerts will arrive on this device.",
+        "disabled": "Not enabled",
+        "disabledBody": "Turn on push notifications to get alerts.",
+        "blockedBody": "Turn on notifications in your device settings.",
+        "unsupportedBody": "Push notifications are only available on mobile."
+      },
+      "notice": {
+        "title": "Push isn't enabled on this device",
+        "body": "Turn on push notifications to receive alerts here."
+      },
+      "manageDescription": "Alerts and devices for this phone."
+    },
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "unread": "Unread",
+    "group": {
+      "today": "Today",
+      "yesterday": "Yesterday"
+    },
+    "openInbox": "Open notifications",
+    "openInboxUnread_one": "Open notifications, {{count}} unread",
+    "openInboxUnread_other": "Open notifications, {{count}} unread",
+    "empty": {
+      "title": "No notifications",
+      "body": "You're all caught up."
+    }
+  },
+  "rewards": {
+    "title": "Rewards",
+    "tabs": {
+      "available": "Available",
+      "pending": "Pending",
+      "earned": "Earned"
+    },
+    "campaign": {
+      "claim": "Claim",
+      "request": "Request",
+      "percentageReward": "{{percentage}}% reward"
+    },
+    "reward": {
+      "status": {
+        "pending": "Pending",
+        "accepted": "Accepted",
+        "rejected": "Rejected"
+      }
+    },
+    "empty": {
+      "available": "No rewards available right now.",
+      "availableBody": "Check back later for new campaigns.",
+      "pending": "No pending rewards.",
+      "earned": "You haven't earned any rewards yet."
+    },
+    "claim": {
+      "success": "Reward claimed",
+      "requested": "Reward requested",
+      "error": "Couldn't claim this reward. Try again."
+    },
+    "error": {
+      "title": "Couldn't load rewards",
+      "retry": "Try again"
+    }
+  },
+  "bank-accounts": {
+    "title": {
+      "add": "Add bank account",
+      "edit": "Edit bank account"
+    },
+    "list": {
+      "title": "Bank accounts",
+      "add": "Add bank account",
+      "footnote": "We verify new accounts before their first withdrawal.",
+      "empty": {
+        "title": "Add a bank account",
+        "body": "Link a bank account for withdrawals. Verification usually takes a few minutes."
+      }
+    },
+    "listItem": {
+      "fallback": "Bank account",
+      "edit": "Edit",
+      "delete": "Delete",
+      "deleteA11y": "Delete {{name}}"
+    },
+    "status": {
+      "verified": "Verified",
+      "pending": "Pending",
+      "declined": "Declined",
+      "incomplete": "Incomplete",
+      "paused": "Paused",
+      "obsolete": "Inactive",
+      "not_started": "Not started"
+    },
+    "decline": {
+      "title": "Why it was declined",
+      "next": "Fix the highlighted details and save. We'll verify the account again.",
+      "fallback": "This account was declined. Try adding a new one."
+    },
+    "delete": {
+      "title": "Delete this bank account?",
+      "body": "{{name}} will be removed from your accounts. This can't be undone.",
+      "confirm": "Delete account",
+      "cancel": "Cancel",
+      "error": "Couldn't delete the account. Try again."
+    },
+    "section": {
+      "destination": "Bank location",
+      "details": "Account details"
+    },
+    "country": {
+      "label": "Country",
+      "placeholder": "Select country"
+    },
+    "currency": {
+      "label": "Bank currency",
+      "placeholder": "Select currency"
+    },
+    "method": {
+      "label": "Payment method",
+      "placeholder": "Select payment method"
+    },
+    "rail": {
+      "ach": "ACH",
+      "wire": "Wire",
+      "sepa": "SEPA",
+      "spei": "SPEI",
+      "pix": "PIX",
+      "swift": "SWIFT",
+      "transfer": "Bank transfer"
+    },
+    "fields": {
+      "name": {
+        "label": "Account name",
+        "placeholder": "e.g. My main account"
+      },
+      "number": {
+        "label": "Account number",
+        "placeholder": "e.g. 4083764677"
+      },
+      "type": {
+        "label": "Account type",
+        "placeholder": "e.g. Checking"
+      },
+      "bank_name": {
+        "label": "Bank name",
+        "placeholder": "e.g. your bank"
+      },
+      "bank_code": {
+        "label": "Bank code",
+        "placeholder": "e.g. 044000037"
+      },
+      "branch_code": {
+        "label": "Branch code",
+        "placeholder": "e.g. 250655"
+      },
+      "routing_number": {
+        "label": "Routing number",
+        "placeholder": "e.g. 021000021"
+      },
+      "sort_code": {
+        "label": "Sort code",
+        "placeholder": "e.g. 12-34-56",
+        "helper": "6 digits"
+      },
+      "iban": {
+        "label": "IBAN",
+        "placeholder": "e.g. ES91 2100 0418 4502 0005 1332",
+        "helper": "15–34 letters and numbers"
+      },
+      "bic": {
+        "label": "BIC",
+        "placeholder": "e.g. CTBAAU2S",
+        "helper": "Usually 8 or 11 characters"
+      },
+      "swift": {
+        "label": "SWIFT",
+        "placeholder": "e.g. CTBAAU2S",
+        "helper": "Usually 8 or 11 characters"
+      },
+      "clabe": {
+        "label": "CLABE",
+        "placeholder": "e.g. 002180012345678906",
+        "helper": "18 numeric digits"
+      },
+      "check_digit": {
+        "label": "Check digit",
+        "placeholder": "e.g. 06"
+      },
+      "pix_key": {
+        "label": "PIX Key",
+        "placeholder": "e.g. user@example.com or +5511999999999"
+      },
+      "br_code": {
+        "label": "Pix Copia e Cola",
+        "placeholder": "Paste the Pix code"
+      },
+      "owner_full_name": {
+        "label": "Account holder name",
+        "placeholder": "e.g. John Smith"
+      },
+      "owner_first_name": {
+        "label": "Account holder first name",
+        "placeholder": "First name"
+      },
+      "owner_middle_name": {
+        "label": "Account holder middle name",
+        "placeholder": "Middle name"
+      },
+      "owner_last_name": {
+        "label": "Account holder last name",
+        "placeholder": "Last name"
+      },
+      "owner_email_address": {
+        "label": "Account holder email",
+        "placeholder": "e.g. name@example.com"
+      },
+      "owner_phone_number": {
+        "label": "Account holder phone",
+        "placeholder": "e.g. +1234567890"
+      },
+      "owner_company_name": {
+        "label": "Company name",
+        "placeholder": "e.g. Acme Corp"
+      },
+      "owner_ein_tin": {
+        "label": "EIN/TIN",
+        "placeholder": "e.g. 12-3456789"
+      },
+      "owner_cpf_cpnj": {
+        "label": "CPF/CPNJ",
+        "placeholder": "CPF/CPNJ"
+      },
+      "owner_address_country": {
+        "label": "Country",
+        "placeholder": "Select country"
+      },
+      "owner_address_line_1": {
+        "label": "Address line 1",
+        "placeholder": "e.g. 123 Main St"
+      },
+      "owner_address_line_2": {
+        "label": "Address line 2",
+        "placeholder": "Address line 2"
+      },
+      "owner_address_city": {
+        "label": "City",
+        "placeholder": "City"
+      },
+      "owner_address_state_province": {
+        "label": "State/Province",
+        "placeholder": "e.g. New York"
+      },
+      "owner_address_state_code": {
+        "label": "State code",
+        "placeholder": "e.g. NY"
+      },
+      "owner_address_postal_code": {
+        "label": "Postal code",
+        "placeholder": "e.g. 10001"
+      }
+    },
+    "ownerAddress": {
+      "title": "Account holder address"
+    },
+    "validation": {
+      "required": "{{field}} is required",
+      "email": "Enter a valid email address",
+      "phone": "Enter a valid phone number",
+      "maxLength": "Must be {{max}} characters or fewer",
+      "atLeastOne": "At least one of these fields is required",
+      "exactlyOne": "Exactly one of these fields is required",
+      "onlyOne": "Enter only one of these fields"
+    },
+    "helper": {
+      "onlyOneOf": "Enter one of these fields, not both"
+    },
+    "form": {
+      "footnote": "We verify these details before your first withdrawal."
+    },
+    "submit": {
+      "add": "Add account",
+      "save": "Save"
+    },
+    "toast": {
+      "created": "Bank account added. Verification may take a few minutes.",
+      "updated": "Changes saved. Re-verification may take a few minutes."
+    },
+    "declinedBanner": "Fix the highlighted details and save to try again.",
+    "errors": {
+      "createFailed": "Couldn't add the bank account. Try again.",
+      "updateFailed": "Couldn't save the changes. Try again.",
+      "loadFailed": "Couldn't load this bank account."
+    }
+  },
+  "bridge-terms": {
+    "title": "Finish setting up your account",
+    "subtitle": "Complete these one-time checks with our verification partner.",
+    "tos": {
+      "title": "Accept the partner agreement",
+      "description": "Review and sign the agreement in your browser.",
+      "approved": "Signed and accepted.",
+      "underReview": "Checking your signature. This may take a moment.",
+      "loading": "Opening the agreement in your browser…"
+    },
+    "kyc": {
+      "title": "Verify your identity",
+      "description": "Verify with Persona in your browser. Have your photo ID ready.",
+      "approved": "Your identity is verified.",
+      "underReview": "We're reviewing your details. This usually takes a few minutes.",
+      "rejected": "We couldn't verify your identity. Tap to try again.",
+      "paused": "Our compliance team is reviewing your verification.",
+      "offboarded": "Your verification was closed following a compliance review.",
+      "loading": "Waiting for your verification. This may take a moment.",
+      "awaitingUbo": "We need documents for your business owners. We'll contact you with next steps.",
+      "awaitingQuestionnaire": "We've received your application. Contact support for next steps.",
+      "endorsementIncompleteActionable": "Additional information is required. Tap to continue.",
+      "endorsementIncomplete": "Additional information is required. Contact support.",
+      "endorsementRevoked": "Verification access was revoked. Contact support.",
+      "endorsementReview": "Final verification is still in review."
+    },
+    "status": {
+      "approved": "Approved",
+      "underReview": "In review",
+      "awaitingDocuments": "Documents needed",
+      "awaitingReview": "Awaiting review",
+      "paused": "On hold",
+      "offboarded": "Offboarded",
+      "rejected": "Rejected",
+      "declined": "Declined",
+      "actionRequired": "Action required",
+      "revoked": "Revoked",
+      "notStarted": "Not started",
+      "loading": "Checking…"
+    },
+    "info": {
+      "underReview": "We're reviewing your verification. This usually takes a few minutes.",
+      "rejected": "Your verification was rejected following a compliance review.",
+      "paused": "Your verification is on hold due to a compliance review.",
+      "offboarded": "Your account was offboarded following a compliance review.",
+      "supportContact": "Contact support at {{email}} for next steps.",
+      "supportContactNoEmail": "Contact support for next steps."
+    },
+    "legalTerms": {
+      "title": "Accept the terms",
+      "description": "Accept the latest terms to start verification.",
+      "accept": "Accept",
+      "accepted": "Accepted",
+      "acceptError": "We couldn't record your acceptance. Try again.",
+      "checking": "Confirming…"
+    },
+    "rail": {
+      "activation": {
+        "status": "Setup needed",
+        "title": "Set up transfers",
+        "description": "We open transfers with our transfer partner the first time you use them. It only happens once.",
+        "inline": "Only the Base network is open right now. Set up the others to use them.",
+        "action": "Set up transfers"
+      },
+      "actionRequired": {
+        "status": "Action needed",
+        "title": "Finish verification",
+        "description": "Our transfer partner needs a little more from you before transfers can open.",
+        "inline": "Our transfer partner needs a little more from you before the other networks open. Base still works.",
+        "action": "Continue verification"
+      },
+      "pending": {
+        "status": "In review",
+        "title": "Waiting on our transfer partner",
+        "description": "They're checking your details. This usually takes a few minutes, and we'll open transfers as soon as they answer.",
+        "inline": "Our transfer partner is still checking your details. The other networks open once they answer. Base works now."
+      },
+      "blocked": {
+        "status": "Not available",
+        "title": "Transfers aren't available",
+        "description": "Our transfer partner closed transfers after a compliance review. Contact support if you think this is wrong.",
+        "inline": "The other networks aren't available on this account. You can still use Base."
+      },
+      "unsupported": {
+        "status": "Not offered",
+        "title": "Transfers aren't offered here",
+        "description": "This wallet doesn't offer these transfers. Contact support if you need them.",
+        "inline": "The other networks aren't offered on this wallet. You can still use Base."
+      },
+      "platform": {
+        "title": "Set up transfers",
+        "description": "We'll send the details you already verified to our transfer partner and ask them to open transfers. Nothing else is needed from you.",
+        "inline": "Only the Base network is open right now. We can ask our transfer partner to open the others.",
+        "action": "Set up transfers"
+      },
+      "steps": {
+        "request": "Request access",
+        "review": "Partner review",
+        "open": "Transfers open"
+      },
+      "availability": {
+        "notYet": "Not available yet",
+        "inReview": "In review",
+        "no": "Not available",
+        "note": "Some countries aren't open yet. They become available as our transfer partner approves more payout rails."
+      },
+      "support": {
+        "body": "Contact support at {{email}} and we'll look into it with you.",
+        "bodyNoEmail": "Contact support and we'll look into it with you.",
+        "action": "Contact support"
+      },
+      "settled": "Request sent. We'll open transfers as soon as our transfer partner answers.",
+      "consent": "This shares the identity details you already gave us with our transfer partner.",
+      "consentAction": "Share details and set up",
+      "continue": "Continue",
+      "notes": {
+        "pixOnramp": "PIX deposits need a Brazilian tax ID (CPF or CNPJ). Have yours ready."
+      },
+      "errors": {
+        "legalTerms": "Accept the latest terms first, then set up transfers.",
+        "notVerified": "Your identity isn't verified yet. Finish verification, then try again.",
+        "notVerifiedAction": "Finish verification",
+        "customerDeleted": "This account was closed with our transfer partner. Contact support.",
+        "frozen": "This account is on hold. Contact support to lift it.",
+        "alreadyAllocated": "Another account already uses these details. Contact support.",
+        "misconfigured": "Transfers aren't set up on this wallet yet. Contact support.",
+        "generic": "We couldn't set up transfers. Try again shortly."
+      }
+    },
+    "errors": {
+      "reservedEmail": "This account uses a reserved email. Register with another email or contact support.",
+      "client": "We couldn't start verification. Contact support.",
+      "server": "We couldn't check your status. Your progress is saved. Try again shortly.",
+      "retry": "Try again"
+    },
+    "skipTestMode": "Skip (test mode only)"
+  },
+  "help": {
+    "title": "Help",
+    "contact": {
+      "title": "Get in touch",
+      "email": "Email support",
+      "website": "Visit the support site"
+    },
+    "faq": {
+      "title": "Common questions"
+    },
+    "about": {
+      "title": "About",
+      "terms": "Terms of use",
+      "privacy": "Privacy policy"
+    },
+    "empty": {
+      "title": "Nothing here yet",
+      "message": "Support details for this wallet haven't been set up."
+    }
+  },
+  "self-custody": {
+    "receive": {
+      "title": "Receive {{token}}",
+      "selectNetwork": "Network",
+      "networkTitle": "Choose a network",
+      "networkHelp": "The sender must use the same network.",
+      "chooseNetwork": "Select network",
+      "noNetworkTitle": "Select a network to continue",
+      "noNetworkBody": "Your deposit address will appear after you choose.",
+      "addressLabel": "Deposit address",
+      "copy": "Copy",
+      "addressCopied": "Address copied",
+      "memoLabel": "Memo",
+      "memoCopied": "Memo copied",
+      "loading": "Loading your deposit address",
+      "fetchError": "Couldn't load your deposit address. Try again.",
+      "warningTitle": "Only send {{token}} on {{network}}",
+      "warningBody": "The wrong asset or network can cause permanent loss.",
+      "memoWarning": "Include the memo or your deposit may need manual credit."
+    },
+    "chain": {
+      "base": "Base",
+      "solana": "Solana",
+      "ethereum": "Ethereum",
+      "arbitrum": "Arbitrum",
+      "optimism": "Optimism",
+      "polygon": "Polygon",
+      "stellar": "Stellar"
+    }
+  },
+  "travel-rule": {
+    "title": "Wallet ownership details",
+    "beneficiaryDescription": "Tell us who controls the destination wallet.",
+    "originatorDescription": "Tell us who sent this deposit.",
+    "walletType": "Wallet type",
+    "walletTypes": {
+      "self_custodied": "Self-custody wallet",
+      "hosted": "Hosted wallet",
+      "external": "Exchange account"
+    },
+    "walletTypeHints": {
+      "self_custodied": "You hold the keys — e.g. MetaMask, Ledger, Phantom",
+      "hosted": "A provider or custodian holds it for you",
+      "external": "An exchange account — e.g. Coinbase, Binance"
+    },
+    "party": "Does this address belong to you?",
+    "parties": {
+      "self": "Yes",
+      "third": "No, it belongs to someone else"
+    },
+    "ownerType": "Owner type",
+    "ownerTypes": {
+      "individual": "Individual",
+      "business": "Business"
+    },
+    "fullName": "Full legal name",
+    "companyName": "Registered company name",
+    "lei": "Legal entity identifier (LEI)",
+    "birthDate": "Date of birth",
+    "birthPlace": "Place of birth",
+    "birthCountry": "Country of birth",
+    "idType": "Identification type",
+    "idNumber": "Identification number",
+    "idCountry": "Country of issue",
+    "idTypes": {
+      "passport": "Passport",
+      "matriculate_id": "Matriculate ID",
+      "military_id": "Military ID",
+      "national_id": "National identity card",
+      "drivers_license": "Driver's licence",
+      "permanent_residency_id": "Permanent residency ID",
+      "state_or_provincial_id": "State or provincial ID",
+      "visa": "Visa",
+      "other": "Other government ID"
+    },
+    "address": "Owner address",
+    "addressLine1": "Address line 1",
+    "addressLine2": "Address line 2 (optional)",
+    "city": "City",
+    "stateProvince": "State or province",
+    "postalCode": "Postal code",
+    "country": "Country",
+    "ownershipConfirmation": "I control this wallet and confirm these details are correct.",
+    "required": "This field is required",
+    "cancel": "Cancel",
+    "save": "Save and continue",
+    "error": "Couldn't save these ownership details. Try again.",
+    "depositTitle": "Travel rule details required",
+    "depositDescription": "Tell us who sent this deposit.",
+    "provideOriginator": "Add sender details",
+    "actionRequired": "Action required"
+  },
+  "cards": {
+    "title": "Cards",
+    "empty": {
+      "title": "Get your virtual card",
+      "body": "Apply, verify your identity, then create your card.",
+      "action": "Apply for a card"
+    },
+    "inviteOnly": {
+      "title": "Card applications are invite-only",
+      "body": "You can apply once your account is invited."
+    },
+    "unavailable": {
+      "title": "Cards aren't enabled on your account",
+      "body": "Your account isn't set up for cards. Contact support if you think this is wrong."
+    },
+    "restricted": {
+      "title": "Cards aren't available to you yet",
+      "body": "There's no card programme for your account group or region. Contact support if you think this is wrong."
+    },
+    "application": {
+      "title": "Application in progress",
+      "body": "Your card will appear here once issued."
+    },
+    "ready": {
+      "title": "Create your card",
+      "body": "Your application is approved. Check the details before creating your card.",
+      "action": "Create card"
+    },
+    "status": {
+      "pending": {
+        "title": "Application submitted",
+        "body": "We're reviewing your application. This page updates automatically."
+      },
+      "needsInformation": {
+        "title": "More information is needed",
+        "body": "Continue your application to add the missing details."
+      },
+      "needsVerification": {
+        "title": "Verification required",
+        "body": "Complete identity verification to continue your card application."
+      },
+      "manualReview": {
+        "title": "Application under review",
+        "body": "A specialist is reviewing your application. We'll update this page."
+      },
+      "denied": {
+        "title": "Application wasn't approved",
+        "body": "Check your profile before applying again."
+      },
+      "locked": {
+        "title": "Application is locked",
+        "body": "Update your profile or contact support."
+      },
+      "canceled": {
+        "title": "Application canceled",
+        "body": "You can start a new application when you're ready."
+      },
+      "approvedUnavailable": {
+        "title": "Application approved",
+        "body": "We couldn't find the funding account. Refresh your accounts or contact support."
+      },
+      "continueVerification": "Continue verification",
+      "applyAgain": "Apply again"
+    },
+    "card": {
+      "exp": "EXP",
+      "cvc": "CVC",
+      "available": "Available",
+      "menu": {
+        "open": "Card actions",
+        "title": "Card actions",
+        "dismiss": "Close card actions"
+      },
+      "status": {
+        "active": "Active",
+        "notActivated": "Needs activation",
+        "locked": "Locked",
+        "canceled": "Canceled"
+      },
+      "statusHint": {
+        "notActivated": "Payments won't work until this card is activated.",
+        "locked": "Payments are blocked. Contact support to unlock this card.",
+        "canceled": "This card is closed and can't be used again."
+      }
+    },
+    "carousel": {
+      "position": "Card {{index}} of {{count}}"
+    },
+    "details": {
+      "show": "Show card details",
+      "hide": "Hide card details",
+      "numberLabel": "Card number",
+      "copyNumber": "Copy card number",
+      "notice": "Details hide automatically. Anyone with them can use your card online.",
+      "error": "Couldn't show card details. Try again."
+    },
+    "pin": {
+      "show": "PIN",
+      "title": "Card PIN",
+      "dismiss": "Close card PIN",
+      "label": "Current PIN",
+      "notice": "Your PIN hides automatically.",
+      "change": "Change PIN",
+      "newLabel": "New PIN",
+      "confirmLabel": "Confirm new PIN",
+      "mismatch": "Both PINs must match",
+      "newPlaceholder": "4 digits",
+      "save": "Save PIN",
+      "saved": "Card PIN updated",
+      "invalid": "Enter 4 digits",
+      "revealError": "Couldn't show your card PIN. Try again.",
+      "setError": "Couldn't update your card PIN. Try again."
+    },
+    "apply": {
+      "title": "Apply for a card",
+      "detailsTitle": "How you’ll use your card",
+      "description": "Choose the account that funds the card and roughly what you expect to spend each month.",
+      "accountLabel": "Funding account",
+      "accountPlaceholder": "Select an account",
+      "monthlyVolumeLabel": "Expected monthly card spend (USD)",
+      "monthlyVolumePlaceholder": "e.g. 2500",
+      "step": "Step {{current}} of {{total}}",
+      "reviewTerms": "Review terms",
+      "submit": "Submit application",
+      "success": "Card application submitted",
+      "error": "Couldn't submit your application. Check your details and try again.",
+      "noAccountTitle": "No eligible funding account",
+      "noAccountBody": "Add a supported account before applying.",
+      "existingTitle": "Application already submitted",
+      "existingBody": "Go to Cards to continue or check its status.",
+      "viewStatus": "View application status",
+      "validation": {
+        "account": "Select a funding account",
+        "monthlyVolume": "Enter your expected monthly spend",
+        "wholeAmount": "Enter a whole amount using numbers only",
+        "amountTooLarge": "Enter a smaller amount"
+      },
+      "terms": {
+        "title": "Card terms",
+        "description": "Accept each item to submit your application.",
+        "electronicConsent": "I consent to receive and sign card documents electronically.",
+        "cardTerms": "I accept the card terms and the issuer privacy policy.",
+        "accurateInformation": "I certify that the information I provided is accurate and I will follow the card rules.",
+        "noSolicitation": "I acknowledge that applying for this card does not constitute unauthorized solicitation.",
+        "viewElectronicConsent": "View E-Sign Consent",
+        "viewCardTerms": "View card terms",
+        "viewPrivacyPolicy": "View privacy policy",
+        "configError": "Card applications are temporarily unavailable. Contact support."
+      }
+    },
+    "requirements": {
+      "title": "Complete your profile",
+      "description": "Verify your identity and contact details before applying.",
+      "continue": "Save and continue",
+      "identity": {
+        "title": "Your personal details",
+        "body": "Check the legal details used to verify your identity.",
+        "firstName": "Legal first name",
+        "lastName": "Legal last name",
+        "birthDate": "Date of birth",
+        "birthDatePlaceholder": "YYYY-MM-DD",
+        "nationality": "Nationality",
+        "nationalityPlaceholder": "Select a country",
+        "idNumber": "Identification number",
+        "email": "Email address",
+        "error": "Couldn't save your details. Check them and try again.",
+        "validation": {
+          "firstName": "Enter your legal first name",
+          "lastName": "Enter your legal last name",
+          "birthDate": "Enter your date of birth",
+          "birthDateFuture": "Enter a date of birth that isn't in the future",
+          "idNumber": "Enter your identification number",
+          "nationality": "Select your nationality",
+          "email": "Enter a valid email address"
+        }
+      },
+      "financial": {
+        "title": "Financial details",
+        "body": "The card issuer needs to know your occupation, income and what you'll use the account for.",
+        "occupation": "Occupation",
+        "occupationPlaceholder": "Search occupations",
+        "annualSalary": "Annual salary (USD)",
+        "annualSalaryPlaceholder": "e.g. 50000",
+        "accountPurpose": "What will you use the account for?",
+        "accountPurposePlaceholder": "Select a purpose",
+        "accountPurposeOther": "Tell us more",
+        "accountPurposeOtherPlaceholder": "Describe what you'll use the account for",
+        "error": "Couldn't save your financial details. Check them and try again.",
+        "purpose": {
+          "personal_or_living_expenses": "Personal or living expenses",
+          "purchase_goods_and_services": "Buying goods and services",
+          "receive_salary": "Receiving my salary",
+          "receive_payment_for_freelancing": "Getting paid for freelance work",
+          "payments_to_friends_or_family_abroad": "Sending money to family or friends abroad",
+          "operating_a_company": "Running a company",
+          "ecommerce_retail_payments": "Online and retail payments",
+          "investment_purposes": "Investing",
+          "protect_wealth": "Protecting my savings",
+          "charitable_donations": "Charitable donations",
+          "other": "Something else"
+        },
+        "validation": {
+          "occupation": "Select your occupation from the list",
+          "annualSalary": "Enter your annual salary",
+          "annualSalaryFormat": "Enter an amount using numbers, with up to two decimals",
+          "annualSalaryTooLarge": "Enter a smaller amount",
+          "accountPurpose": "Select what you'll use the account for",
+          "accountPurposeOther": "Tell us what you'll use the account for",
+          "accountPurposeOtherLength": "Use {{max}} characters or fewer"
+        }
+      },
+      "profile": {
+        "title": "Personal information",
+        "body": "Add your legal name, birth date, ID, nationality, and email.",
+        "action": "Update personal information"
+      },
+      "address": {
+        "title": "Residential address",
+        "body": "Enter your permanent home address for verification.",
+        "action": "Update address",
+        "line1": "Address line 1",
+        "line2": "Address line 2 (optional)",
+        "city": "City",
+        "stateProvince": "State or province",
+        "postalCode": "Postal code",
+        "country": "Country",
+        "countryPlaceholder": "Select a country",
+        "error": "Couldn't save your address. Check it and try again.",
+        "validation": {
+          "line1": "Enter your street address",
+          "city": "Enter your city",
+          "stateProvince": "Enter your state or province",
+          "postalCode": "Enter your postal code",
+          "country": "Select your country"
+        }
+      },
+      "mobile": {
+        "title": "Verified mobile number",
+        "body": "We'll text a 5-digit code to verify your number.",
+        "action": "Verify mobile",
+        "number": "Mobile number",
+        "invalid": "Enter a valid international mobile number",
+        "send": "Send verification code",
+        "sent": "Verification code sent",
+        "codeBody": "Enter the 5-digit code sent to {{number}}.",
+        "otpLabel": "Mobile verification code",
+        "verify": "Verify number",
+        "verified": "Mobile number verified",
+        "resend": "Send another code",
+        "resent": "A new verification code was sent",
+        "sendError": "Couldn't send a verification code. Try again.",
+        "verifyError": "Couldn't verify that code. Try again.",
+        "notVerified": "Number not verified. Request a new code and try again."
+      },
+      "checkAgain": "Check again"
+    },
+    "create": {
+      "title": "Create card",
+      "previewTitle": "Your virtual card",
+      "reviewTitle": "Review your card",
+      "reviewBody": "Check the funding account and currency.",
+      "typeLabel": "Card type",
+      "virtual": "Virtual",
+      "physical": "Physical",
+      "accountLabel": "Funding account",
+      "currencyLabel": "Currency",
+      "notice": "Card details appear only after you create the card.",
+      "submit": "Create virtual card",
+      "success": "Card created",
+      "error": "Couldn't create your card. Try again.",
+      "notReadyTitle": "Card creation isn't available yet",
+      "notReadyBody": "Your application must be approved first.",
+      "alreadyCreatedTitle": "Your card is already created",
+      "alreadyCreatedBody": "Go to Cards to view and manage it.",
+      "viewCard": "View my card"
+    }
+  },
+  "payment-requests": {
+    "flowTitle": "Request a payment",
+    "stage": {
+      "amount": "Request",
+      "review": "Review"
+    },
+    "recipientStep": {
+      "question": "Who are you requesting from?",
+      "searchPlaceholder": "Search name, email, or phone",
+      "requestFrom": "Request from {{recipient}}",
+      "recents": "Recent contacts",
+      "change": "Change who you're requesting from",
+      "changeTitle": "Change who you're asking",
+      "changeDismiss": "Close the contact picker",
+      "typeEmail": "Email",
+      "typeMobile": "Phone",
+      "searchEmpty": "No contacts match “{{query}}”",
+      "emptyTitle": "No recent contacts"
+    },
+    "amountHeroLabel": "Amount to request",
+    "amountSwap": "Switch entry currency",
+    "changeAccount": "Change the account you're paid into",
+    "continue": "Review",
+    "note": "Note (optional)",
+    "notePlaceholder": "What is this for?",
+    "confirm": {
+      "heroLabel": "You're requesting",
+      "payerEmail": "From email",
+      "payerMobile": "From phone",
+      "to": "Paid into",
+      "note": "Note",
+      "submit": "Send request"
+    },
+    "validation": {
+      "amount": "Enter an amount greater than zero",
+      "recipientRequired": "Add who you're requesting from",
+      "invalidEmail": "That email doesn't look right",
+      "invalidMobile": "That phone number doesn't look right",
+      "noteTooLong": "The note is too long",
+      "payerIsSelf": "You can't request money from yourself"
+    },
+    "errors": {
+      "create": "Couldn't send the request.",
+      "payerUnknown": "We couldn't send the request to that contact. Try a different email or phone number."
+    },
+    "success": {
+      "title": "Request sent",
+      "message": "We've asked {{recipient}} to pay. You can also copy the payment link and send it yourself.",
+      "link": "Payment link",
+      "another": "Request another"
+    },
+    "result": {
+      "failedTitle": "Request not sent",
+      "done": "Done",
+      "tryAgain": "Try again"
+    },
+    "notAvailable": {
+      "title": "Requests unavailable",
+      "body": "This wallet doesn't support payment requests yet. Contact support if you think it should.",
+      "contact": "Contact support"
+    },
+    "row": {
+      "title": "Request a payment",
+      "subtitle": "Ask someone for a set amount."
+    },
+    "inbox": {
+      "title": "Requests",
+      "toPay": "To pay",
+      "toPayTab": "Requests other people sent you",
+      "toReceive": "To receive",
+      "toReceiveTab": "Requests you sent other people",
+      "new": "Request a payment",
+      "askedAt": "Asked {{when}}",
+      "sentAt": "Sent {{when}}",
+      "dueAt": "Due {{when}}",
+      "overdue": "Overdue",
+      "paidAt": "Paid {{when}}",
+      "paying": "Payment on its way",
+      "cancelledAt": "Cancelled {{when}}",
+      "emptyToPayTitle": "Nothing to pay",
+      "emptyToPay": "Requests other people send you show up here.",
+      "emptyToReceiveTitle": "Nothing to receive",
+      "emptyToReceive": "You haven't asked anyone for money yet.",
+      "error": "Couldn't load your requests.",
+      "asksBy": "{{name}} asks",
+      "sectionOverdue": "Overdue",
+      "sectionWaiting": "Waiting",
+      "sectionSettling": "Paying",
+      "sectionDone": "Done"
+    },
+    "state": {
+      "paid": "Paid",
+      "cancelled": "Cancelled"
+    },
+    "detail": {
+      "title": "Request",
+      "asks": "{{name}} asks",
+      "youAsked": "You asked {{name}}",
+      "payFrom": "Pay from",
+      "from": "From",
+      "to": "To",
+      "asked": "Asked",
+      "sent": "Sent",
+      "forLabel": "For",
+      "viewTransaction": "View transaction",
+      "error": "Couldn't load this request."
+    },
+    "pay": {
+      "hero": "You're paying",
+      "submit": "Pay {{amount}}",
+      "shortfall": "You need {{amount}} more in this account.",
+      "addMoney": "Add money",
+      "noCurrency": "This request is in {{code}}. You don't hold {{code}} yet.",
+      "closed": "This request is no longer open.",
+      "error": "Couldn't pay this request.",
+      "unavailable": "This device can't create the secure ID a payment needs, so nothing was sent. Pay is unavailable here — try the app, or a different browser.",
+      "successTitle": "Paid",
+      "successMessage": "{{name}} has been paid.",
+      "failedTitle": "Payment not sent",
+      "decline": "Decline",
+      "declined": "Request declined.",
+      "declineError": "Couldn't decline this request.",
+      "fee": "Fee",
+      "feeFree": "Free",
+      "total": "Total",
+      "declineConfirmTitle": "Decline this request?",
+      "declineConfirmBody": "You can't undo this. {{name}} will see the request as cancelled.",
+      "declineConfirm": "Decline request",
+      "declineKeep": "Not now"
+    },
+    "sent": {
+      "cancel": "Cancel request",
+      "cancelled": "Request cancelled.",
+      "cancelError": "Couldn't cancel this request.",
+      "remind": "Remind {{name}}",
+      "reminded": "Reminder sent to {{contact}}",
+      "remindError": "Couldn't send the reminder.",
+      "remindGeneric": "Remind",
+      "cancelConfirmTitle": "Cancel this request?",
+      "cancelConfirmBody": "You can't undo this. {{name}} won't be able to pay it.",
+      "cancelKeep": "Keep request"
+    },
+    "slot": {
+      "pay": "Pay",
+      "review": "Review",
+      "seeAll": "See all",
+      "inTotal": "in total",
+      "toPay_one": "{{count}} request to pay",
+      "toPay_other": "{{count}} requests to pay",
+      "overdueCount_one": "{{count}} overdue",
+      "overdueCount_other": "{{count}} overdue",
+      "awaiting_one": "{{count}} request you sent",
+      "awaiting_other": "{{count}} requests you sent",
+      "doorCaption": "Nothing waiting",
+      "openInbox": "See your payment requests",
+      "seeAllRequests": "See all requests",
+      "unpaid": "not paid yet"
+    }
+  }
+}

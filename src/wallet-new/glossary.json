@@ -1,0 +1,44 @@
+{
+  "//": "Terms the machine translator must leave verbatim, and per-language wording to keep consistent. Every entry in doNotTranslate is checked by scripts/wallet-new/validate.mjs: if the English contains the term and the translation does not, the value is rejected. Only add unambiguous proper nouns — 'Wire' and 'Memo' are deliberately absent because 'Wire transfer' and 'Memo' SHOULD be translated, and 'PIN' is absent because some languages localise it.",
+  "doNotTranslate": [
+    "Mukuru",
+    "Bridge",
+    "Plaid",
+    "Privy",
+    "Sumsub",
+    "Visa",
+    "Stellar",
+    "Base",
+    "Solana",
+    "Polygon",
+    "Arbitrum",
+    "Optimism",
+    "Ethereum",
+    "Coinbase",
+    "Binance",
+    "MetaMask",
+    "Ledger",
+    "Phantom",
+    "ACH",
+    "SEPA",
+    "SWIFT",
+    "SPEI",
+    "BEAC",
+    "PIX",
+    "IBAN",
+    "BIC",
+    "CLABE",
+    "LEI",
+    "CPF",
+    "EIN",
+    "TIN",
+    "QR",
+    "CVC"
+  ],
+  "terms": {
+    "fr": {
+      "beneficiary": "bénéficiaire",
+      "self-custody": "autoconservation"
+    }
+  }
+}

@@ -122,6 +122,94 @@ Then copy the outputs into `src/source/` here and run `yarn sync`.
 
 ---
 
+---
+
+## rehive-wallet-new (separate family)
+
+[rehive-wallet-new](https://github.com/rehive/rehive-wallet-new) is the wallet rebuild. Its
+translations live under `src/wallet-new/` and share **nothing** with the two legacy apps above.
+
+**Why separate.** The legacy apps merge into one flat key space. The new wallet's namespace names
+collide with it on 27 top-level keys, and the types disagree — legacy `common.select` is a string,
+the new wallet's is an object with `select.searchPlaceholder` underneath; legacy `profile.title` is
+a Mr/Ms salutation, the new wallet's is a screen title. Merging the families would corrupt both.
+The new wallet also uses i18next plural suffixes, which the legacy files do not have at all.
+
+```
+src/wallet-new/
+  language-en.json              ← pushed by rehive-wallet-new CI (auto-generated, do not edit)
+  glossary.json                 ← do-not-translate terms + per-language wording
+  locales/language-<locale>.json
+  locks/language-<locale>.json  ← English content hash per key + human-reviewed list
+```
+
+### Flow
+
+```
+rehive-wallet-new: src/i18n/en/** changes on main
+  → pushes src/wallet-new/language-en.json here
+       ↓
+wallet-new-sync.yml
+  → diff.mjs      adds new keys, drops departed ones, carries renames, reports fill rate
+  → translate.mjs fills every empty/stale value with Claude, validates, stamps the lock
+  → opens ONE PR for review
+       ↓
+merge → deploy-pages.yml publishes wallet-new/language-<locale>.json
+       ↓
+rehive-wallet-new: `node ./scripts/i18n.mjs pull` installs finished languages (a reviewed commit —
+  a bundled language ships inside the binary, so it is never a bot push)
+```
+
+### Commands
+
+```bash
+yarn wallet-new:add-language fr      # scaffold, with fr's own plural forms
+yarn wallet-new:diff                 # structure + fill-rate report → src/wallet-new/diff.json
+yarn wallet-new:translate --dry-run  # what would be sent, no API calls
+yarn wallet-new:translate --lang fr  # fill fr (needs ANTHROPIC_API_KEY)
+yarn test                            # validator + plural-expansion tests
+```
+
+### What the machine output is checked against
+
+`translate.mjs` does not trust the model. Every value must pass `scripts/wallet-new/validate.mjs`
+or it is retried once and then **left empty for a human** — never written half-right:
+
+- `{{placeholders}}` identical to the source, same set and count
+- do-not-translate terms from `glossary.json` still present verbatim
+- newline count unchanged, so multi-paragraph help copy keeps its structure
+- no Arabic-Indic or Persian digits — the wallet pins Latin numerals for money and dates
+- not byte-identical to the English for anything longer than three words
+
+The lock is stamped only for values that passed, so a failed key is picked up again next run
+instead of looking finished.
+
+### Plurals
+
+English ships `_one`/`_other`. Each target gets **its own** CLDR categories, from
+`Intl.PluralRules`: Arabic six, French two, Japanese one. On the current source that is 2242 keys
+for `fr`, 2262 for `ar`, 2237 for `ja`. This is the main reason the legacy scripts could not be
+reused — a key-for-key diff against English deletes forms Arabic needs and demands forms Japanese
+has no rule for, and the wallet's `bundled-parity.test.ts` rejects both.
+
+### Renames and human edits
+
+`locks/language-<locale>.json` stores the SHA-256 of the English value each translation was made
+from. Two things fall out of that:
+
+- **Rename detection** — a key that left English whose recorded hash matches a key that just
+  arrived is a rename, so the finished translation moves with it instead of being deleted and paid
+  for again.
+- **Stale detection** — if the English changed, the translation is queued for redoing. Add a key to
+  the lock's `reviewed` list and it is left alone permanently; the PR reports it as
+  human-reviewed-but-English-moved rather than silently overwriting a native speaker's fix.
+
+### Required secret
+
+| Secret | Purpose |
+|--------|---------|
+| `ANTHROPIC_API_KEY` | `translate.mjs`. **Until this is set the translate step is skipped** and the workflow opens a PR of empty placeholders — the old manual flow, not a failure. |
+
 ## GitHub secrets required
 
 Cross-repo pushes are authenticated by the **`rehive-translations-bot`** GitHub App (installed on `wallet-translations` only, with Contents: write). Each repo that needs to push reads the app credentials from these org-level secrets:
