@@ -1,22 +1,24 @@
-// Shared helpers for the rehive-wallet-new translation family.
+// Shared helpers for the rehive-wallet-new translation pipeline.
 //
-// Deliberately separate from the legacy scripts/{sync,diff,add-language}.js, which serve
-// wallet-react and wallet-react-native. Those two apps share one flat merged key space and have
-// no plural forms; the new wallet is namespaced per file, uses i18next plural suffixes, and its
-// namespace names COLLIDE with the legacy ones (`common.select` is a string there and an object
-// here). Merging the two families would corrupt both, so they share no data and no code.
+// This repo serves rehive-wallet-new only. It previously also held a merged key space for
+// wallet-react and wallet-react-native; that family was removed because nothing produced it (no
+// app-side workflow ran the sync) and nothing consumed it (no repo referenced the published
+// files), and its three language files never got past 0% translated. Git history has it if the
+// old wallets ever need it back — but do NOT merge it into this key space: the namespace names
+// collide on 27 top-level keys and the types disagree (its `common.select` is a string, this
+// one's is an object), so one tree cannot hold both.
 
 import { createHash } from 'node:crypto';
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
-export const FAMILY_DIR = path.join(ROOT, 'src', 'wallet-new');
-export const LOCALES_DIR = path.join(FAMILY_DIR, 'locales');
-export const LOCKS_DIR = path.join(FAMILY_DIR, 'locks');
+export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+export const SRC_DIR = path.join(ROOT, 'src');
+export const LOCALES_DIR = path.join(SRC_DIR, 'locales');
+export const LOCKS_DIR = path.join(SRC_DIR, 'locks');
 export const SOURCE_LANGUAGE = 'en';
-export const SOURCE_FILE = path.join(FAMILY_DIR, `language-${SOURCE_LANGUAGE}.json`);
+export const SOURCE_FILE = path.join(SRC_DIR, `language-${SOURCE_LANGUAGE}.json`);
 
 export const PLURAL_SUFFIXES = ['zero', 'one', 'two', 'few', 'many', 'other'];
 
@@ -149,7 +151,7 @@ export function translatedLanguages() {
 }
 
 export function readGlossary() {
-  const file = path.join(FAMILY_DIR, 'glossary.json');
+  const file = path.join(SRC_DIR, 'glossary.json');
   if (!existsSync(file)) return { doNotTranslate: [], terms: {} };
   const glossary = readJson(file);
   return { doNotTranslate: glossary.doNotTranslate ?? [], terms: glossary.terms ?? {} };

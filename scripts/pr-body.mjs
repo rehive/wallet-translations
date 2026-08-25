@@ -1,12 +1,12 @@
 #!/usr/bin/env node
-// Markdown PR body from src/wallet-new/diff.json. Used as: --body "$(node scripts/wallet-new/pr-body.mjs)"
+// Markdown PR body from src/diff.json. Used as: --body "$(node scripts/pr-body.mjs)"
 
 import process from 'node:process';
 import { existsSync } from 'node:fs';
 import path from 'node:path';
-import { FAMILY_DIR, readJson } from './lib.mjs';
+import { SRC_DIR, readJson } from './lib.mjs';
 
-const diffPath = path.join(FAMILY_DIR, 'diff.json');
+const diffPath = path.join(SRC_DIR, 'diff.json');
 if (!existsSync(diffPath)) {
   console.log('No diff.json found.');
   process.exit(0);
@@ -17,7 +17,7 @@ const locales = Object.keys(report);
 const translated = process.env.TRANSLATED_BY ?? '';
 const sourceSha = process.env.SOURCE_SHA ?? '';
 
-const lines = ['## rehive-wallet-new translations', ''];
+const lines = ['## Translation sync', ''];
 
 if (translated) {
   lines.push(`Machine-filled by \`${translated}\`. **Every value below needs a human read before merge** — the checks catch dropped placeholders, altered brand names and wrong plural forms, not wrong wording.`);

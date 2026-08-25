@@ -6,8 +6,6 @@ on:
     paths:
       - 'src/language-en.json'
       - 'src/locales/**'
-      - 'src/wallet-new/language-en.json'
-      - 'src/wallet-new/locales/**'
   workflow_dispatch:
 
 permissions:
@@ -40,23 +38,6 @@ jobs:
           # All translated locale files — flattened from src/locales/
           if [ -d src/locales ]; then
             cp src/locales/language-*.json _site/ 2>/dev/null || true
-          fi
-
-          # rehive-wallet-new is a SEPARATE family under its own prefix. Its namespace names
-          # collide with the legacy apps' (`common.select` is a string there, an object here), so
-          # the two must never be served from the same file or the same directory.
-          if [ -d src/wallet-new ]; then
-            mkdir -p _site/wallet-new
-            cp src/wallet-new/language-en.json _site/wallet-new/ 2>/dev/null || true
-            cp src/wallet-new/locales/language-*.json _site/wallet-new/ 2>/dev/null || true
-            node -e "
-              const fs = require('fs');
-              const dir = '_site/wallet-new';
-              const files = fs.readdirSync(dir).filter(f => f.startsWith('language-') && f.endsWith('.json'));
-              const locales = files.map(f => f.replace('language-', '').replace('.json', ''));
-              fs.writeFileSync(dir + '/index.json', JSON.stringify({ locales }, null, 2));
-              console.log('wallet-new locales deployed:', locales.join(', ') || '(none)');
-            "
           fi
 
           # index.json — lists all available locale codes for easy discovery

@@ -1,18 +1,18 @@
 #!/usr/bin/env node
-// Bring every rehive-wallet-new language file back in step with the English source.
+// Bring every language file back in step with the English source.
 //
-//   node scripts/wallet-new/diff.mjs [--lang <code>] [--report-only]
+//   node scripts/diff.mjs [--lang <code>] [--report-only]
 //
-// Writes src/wallet-new/diff.json and, for GitHub Actions, `has_changes` / `needs_translation`.
+// Writes src/diff.json and, for GitHub Actions, `has_changes` / `needs_translation`.
 //
-// Three things the legacy scripts/diff.js cannot do, and why each matters here:
+// Three things this does that a plain key-for-key diff does not, each earned the hard way:
 //
-//   1. PLURALS. English ships `_one`/`_other`. Arabic needs six forms and Japanese one, so a
-//      key-for-key diff against English deletes forms Arabic requires and demands forms Japanese
-//      has no rule for. The wallet's parity gate rejects both.
-//   2. FILL RATE. The legacy diff compares key STRUCTURE only, so a file of 3135 empty strings
-//      reports "up to date" — which is exactly how fr/de/it sat at 0% translated for months while
-//      CI stayed green. Empty values are counted here and reported per language.
+//   1. PLURALS. English ships `_one`/`_other`. Arabic needs six forms and Japanese one, so
+//      diffing key-for-key against English deletes forms Arabic requires and demands forms
+//      Japanese has no rule for. The wallet's parity gate rejects both.
+//   2. FILL RATE. Comparing key STRUCTURE alone lets a file of empty strings report "up to date".
+//      That is not hypothetical: this repo's previous pipeline did exactly that, and three
+//      language files sat at 0% translated for months with CI green. Empty values are counted.
 //   3. RENAMES. Deleting every key that left English throws away finished work when a key is
 //      merely renamed. The lock stores the English content hash each translation was made from,
 //      so a rename is detected by content and the translation moves with it.
@@ -20,7 +20,7 @@
 import process from 'node:process';
 import { existsSync } from 'node:fs';
 import {
-  FAMILY_DIR,
+  SRC_DIR,
   SOURCE_FILE,
   deletePath,
   expectedKeys,
@@ -59,7 +59,7 @@ const english = readJson(SOURCE_FILE);
 const languages = translatedLanguages().filter((id) => only.length === 0 || only.includes(id));
 
 if (languages.length === 0) {
-  console.log('No rehive-wallet-new language files yet — add one with add-language.mjs.');
+  console.log('No language files yet — add one with scripts/add-language.mjs.');
   process.exit(0);
 }
 
@@ -177,8 +177,8 @@ for (const language of languages) {
   writeLock(language, { reviewed: [...reviewed], source: lock.source });
 }
 
-writeJson(path.join(FAMILY_DIR, 'diff.json'), report);
-console.log(`\nReport → src/wallet-new/diff.json`);
+writeJson(path.join(SRC_DIR, 'diff.json'), report);
+console.log('\nReport → src/diff.json');
 
 if (process.env.GITHUB_OUTPUT) {
   const { appendFileSync } = await import('node:fs');

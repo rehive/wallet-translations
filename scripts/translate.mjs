@@ -1,8 +1,8 @@
 #!/usr/bin/env node
-// Fill the empty and stale values in every rehive-wallet-new language file using Claude.
+// Fill the empty and stale values in every language file using Claude.
 //
-//   node scripts/wallet-new/translate.mjs [--lang <code>] [--dry-run] [--model <id>]
-//                                        [--batch <n>] [--effort <low|medium|high|xhigh|max>]
+//   node scripts/translate.mjs [--lang <code>] [--dry-run] [--model <id>]
+//                              [--batch <n>] [--effort <low|medium|high|xhigh|max>]
 //
 // Needs ANTHROPIC_API_KEY. Without one it reports the plan and exits 0, so the sync workflow still
 // opens a placeholder PR — the pipeline degrades to the old manual flow instead of breaking.
@@ -56,7 +56,7 @@ const languages = translatedLanguages().filter(
 );
 
 if (languages.length === 0) {
-  console.log('No rehive-wallet-new language files to fill.');
+  console.log('No language files to fill.');
   process.exit(0);
 }
 

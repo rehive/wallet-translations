@@ -1,16 +1,12 @@
-name: Sync rehive-wallet-new translations
+name: Sync translations
 
-# rehive-wallet-new pushes src/wallet-new/language-en.json whenever its English copy changes.
-# This fills every other language with Claude and opens ONE review PR.
-#
-# Separate from sync-and-update.yml on purpose: that workflow serves wallet-react and
-# wallet-react-native, whose merged key space collides with this one (`common.select` is a string
-# there and an object here) and which have no plural forms. The two families never share a file.
+# rehive-wallet-new pushes src/language-en.json whenever its English copy changes. This fills every
+# other language with Claude and opens ONE review PR for a human to read before merge.
 on:
   push:
     branches: [main]
     paths:
-      - 'src/wallet-new/language-en.json'
+      - 'src/language-en.json'
   workflow_dispatch:
 
 permissions:
@@ -19,7 +15,7 @@ permissions:
 
 # Never cancel: a run that has already spent tokens should finish and open its PR.
 concurrency:
-  group: wallet-new-sync
+  group: sync
   cancel-in-progress: false
 
 jobs:
@@ -41,7 +37,7 @@ jobs:
       # Structure first: add new keys, drop departed ones, carry renames, report fill rate.
       - name: Diff language files
         id: diff
-        run: node scripts/wallet-new/diff.mjs
+        run: node scripts/diff.mjs
 
       # Skipped when no key is configured, so the pipeline still opens a placeholder PR rather
       # than failing the run. Remove the `if` once ANTHROPIC_API_KEY is set on the repo.
@@ -51,13 +47,13 @@ jobs:
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
-          node scripts/wallet-new/translate.mjs
+          node scripts/translate.mjs
           echo "translated=true" >> "$GITHUB_OUTPUT"
 
       # Refresh the report so the PR body shows post-translation fill rates, not pre.
       - name: Refresh report
         if: always() && steps.diff.outcome == 'success'
-        run: node scripts/wallet-new/diff.mjs --report-only
+        run: node scripts/diff.mjs --report-only
 
       - name: Open PR
         if: steps.diff.outputs.has_changes == 'true' || steps.translate.outputs.translated == 'true'
@@ -69,19 +65,19 @@ jobs:
           # The pushing workflow records the source commit as "From rehive/rehive-wallet-new@<sha>."
           SOURCE_SHA="$(printf '%s' "$HEAD_MESSAGE" | grep -oE 'rehive-wallet-new@[0-9a-f]{7,40}' | head -1 | cut -d@ -f2 || true)"
           export SOURCE_SHA
-          BRANCH="wallet-new/translations-$(date +%Y%m%d-%H%M%S)"
+          BRANCH="translations/update-$(date +%Y%m%d-%H%M%S)"
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH"
-          git add src/wallet-new
+          git add src
           if git diff --cached --quiet; then
             echo "Nothing to commit after all."
             exit 0
           fi
-          git commit -m "chore(wallet-new): sync translations $(date +%Y-%m-%d)"
+          git commit -m "chore: sync translations $(date +%Y-%m-%d)"
           git push origin "$BRANCH"
           gh pr create \
-            --title "chore(wallet-new): sync translations $(date +%Y-%m-%d)" \
-            --body "$(node scripts/wallet-new/pr-body.mjs)" \
+            --title "chore: sync translations $(date +%Y-%m-%d)" \
+            --body "$(node scripts/pr-body.mjs)" \
             --base main \
             --head "$BRANCH"

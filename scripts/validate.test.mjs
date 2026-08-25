@@ -1,4 +1,4 @@
-// node --test scripts/wallet-new/
+// node --test scripts/validate.test.mjs
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { validateBatchShape, validateTranslation } from './validate.mjs';

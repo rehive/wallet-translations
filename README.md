@@ -1,39 +1,41 @@
 # wallet-translations
 
-Centralized translation files for Rehive wallet apps ([wallet-react](https://github.com/rehive/wallet-react) and [wallet-react-native](https://github.com/rehive/wallet-react-native)).
+Translation files for the Rehive wallet ([rehive-wallet-new](https://github.com/rehive/rehive-wallet-new)).
 
-The canonical English file (`src/language-en.json`) is **auto-generated** — do not edit it by hand. All other language files are maintained here by translators.
+English (`src/language-en.json`) is **auto-generated** — do not edit it by hand. Every other
+language is machine-filled here with Claude and reviewed in a PR before merge.
+
+> This repo previously also held a merged key space for `wallet-react` and `wallet-react-native`.
+> That family was removed: no app-side workflow produced it, no repo consumed the published files,
+> and its three language files never got past 0% translated. It is in git history if it is ever
+> needed. Do **not** merge it back into this key space — the namespace names collide on 27
+> top-level keys and the types disagree (its `common.select` is a string, this one's is an object),
+> so one tree cannot hold both.
 
 ---
 
 ## How it works
 
-Each wallet app generates and pushes its own merged translation file directly to this repo whenever `.en.json` files change on `main`. This gives a clear per-app history and keeps the workflow simple — no cross-repo checkouts needed here.
-
 ```
-wallet-react                    wallet-react-native
-  *.en.json changes on main       *.en.json changes on main
-  → runs languageSyncSelf.cjs     → runs languageSync.cjs
-  → pushes src/wallet-react.json  → pushes src/wallet-react-native.json
-         │                                      │
-         └──────────────┬───────────────────────┘
-                        ▼
-              wallet-translations
-     merge-app-translations.yml fires
-       → sync.cjs merges the two files
-       → commits src/language-en.json
-                        │
-                        ▼
-              sync-and-update.yml fires
-       → diff.js compares language-en.json
-         against each language-*.json
-       → PR opened with empty-string
-         placeholders for new keys,
-         tagged to the developer who
-         introduced the change
+rehive-wallet-new: src/i18n/en/** changes on main
+  → pushes src/language-en.json here
+       ↓
+sync.yml
+  → diff.mjs       adds new keys, drops departed ones, carries renames, reports fill rate
+  → translate.mjs  fills every empty or stale value with Claude, validates, stamps the lock
+  → opens ONE PR
+       ↓
+a human reads the PR and merges
+       ↓
+deploy-pages.yml publishes language-<locale>.json
+       ↓
+rehive-wallet-new: `node ./scripts/i18n.mjs pull` installs finished languages
 ```
 
-**No PR = no changes.** If the English keys are already up to date across all language files, the workflow exits cleanly.
+The pull back into the wallet is deliberately **manual**. A bundled language ships inside the
+binary, so installing one is a reviewed commit, never a bot push.
+
+**No PR = no changes.** If every language is already in step with English, the workflow exits clean.
 
 ---
 
@@ -41,220 +43,143 @@ wallet-react                    wallet-react-native
 
 ```
 src/
-  language-en.json              ← merged English master (auto-generated, do not edit)
-  source/
-    wallet-react.json           ← latest from wallet-react (auto-updated by CI)
-    wallet-react-native.json    ← latest from wallet-react-native (auto-updated by CI)
-    sync-meta.json              ← last sync metadata (actor, repo, sha — auto-generated)
-  locales/
-    language-de.json            ← German (manually translated)
-    language-fr.json            ← French (manually translated)
-    language-<locale>.json      ← other languages
-history/
-  wallet-react/
-    2026-05-25T10-00-00Z.json   ← timestamped snapshot of each push
-    2026-05-26T14-30-00Z.json
-  wallet-react-native/
-    2026-05-25T11-00-00Z.json
-    ...
-```
-
-Language files use [BCP 47](https://tools.ietf.org/html/bcp47) locale codes as suffixes (e.g. `de`, `fr`, `es`, `pt-BR`, `zh-CN`, `ar`).
-
----
-
-## Adding a new language
-
-1. Make sure `src/language-en.json` is up to date (it will be if the CI has run recently).
-2. Scaffold the new language file:
-   ```bash
-   node scripts/add-language.js <locale>
-   # e.g.
-   node scripts/add-language.js de
-   node scripts/add-language.js zh-CN
-   ```
-   This creates `src/locales/language-<locale>.json` with every English key present and an empty string as the value.
-3. Fill in the translations. Every key with an empty string `""` needs a translation.
-4. Commit and open a PR.
-5. Once merged, future English key changes will automatically be reflected in this file via the `sync-and-update` workflow.
-
----
-
-## Keeping translations up to date (automated)
-
-When English keys change in either wallet app, this is the automated flow:
-
-1. The wallet app's CI generates a merged JSON of its own `.en.json` files and pushes it to `src/wallet-react.json` (or `wallet-react-native.json`)
-2. `merge-app-translations.yml` triggers, merges both app files into `src/language-en.json`, and commits it
-3. `sync-and-update.yml` triggers on that commit and:
-   - Diffs `language-en.json` against every `language-*.json` in `src/locales/`
-   - For any language with missing or stale keys, opens a PR that adds new keys as empty-string placeholders and removes keys no longer in English
-   - Tags the developer who introduced the change in the PR body
-
-Translators review the PR, fill in the empty strings, and merge.
-
----
-
-## Running locally
-
-```bash
-# Generate language-en.json from the committed per-app files
-yarn sync
-
-# Diff and patch all language files
-yarn diff
-
-# Preview the PR body that would be generated
-node scripts/pr-body.js
-```
-
-To regenerate the per-app source files locally, run the sync script in each wallet repo:
-
-```bash
-# wallet-react — scans only its own src/**/*.en.json
-node languageSyncSelf.cjs   # outputs to tmp/language-en.json
-
-# wallet-react-native — scans only its own src/**/*.en.json
-node languageSync.cjs       # outputs to tmp/language-en.json
-```
-
-Then copy the outputs into `src/source/` here and run `yarn sync`.
-
----
-
----
-
-## rehive-wallet-new (separate family)
-
-[rehive-wallet-new](https://github.com/rehive/rehive-wallet-new) is the wallet rebuild. Its
-translations live under `src/wallet-new/` and share **nothing** with the two legacy apps above.
-
-**Why separate.** The legacy apps merge into one flat key space. The new wallet's namespace names
-collide with it on 27 top-level keys, and the types disagree — legacy `common.select` is a string,
-the new wallet's is an object with `select.searchPlaceholder` underneath; legacy `profile.title` is
-a Mr/Ms salutation, the new wallet's is a screen title. Merging the families would corrupt both.
-The new wallet also uses i18next plural suffixes, which the legacy files do not have at all.
-
-```
-src/wallet-new/
-  language-en.json              ← pushed by rehive-wallet-new CI (auto-generated, do not edit)
+  language-en.json              ← English source (auto-generated, do not edit)
   glossary.json                 ← do-not-translate terms + per-language wording
-  locales/language-<locale>.json
-  locks/language-<locale>.json  ← English content hash per key + human-reviewed list
+  locales/
+    language-fr.json            ← one per language
+  locks/
+    language-fr.json            ← English content hash per key + human-reviewed list
+scripts/
+  lib.mjs         shared helpers (paths, plural expansion, locks)
+  validate.mjs    hard checks on machine output
+  diff.mjs        keep every language in step with English
+  translate.mjs   fill the gaps with Claude
+  add-language.mjs
+  pr-body.mjs
 ```
 
-### Flow
+Locale codes are [BCP 47](https://tools.ietf.org/html/bcp47): `fr`, `de`, `pt-BR`, `zh-CN`, `ar`.
 
-```
-rehive-wallet-new: src/i18n/en/** changes on main
-  → pushes src/wallet-new/language-en.json here
-       ↓
-wallet-new-sync.yml
-  → diff.mjs      adds new keys, drops departed ones, carries renames, reports fill rate
-  → translate.mjs fills every empty/stale value with Claude, validates, stamps the lock
-  → opens ONE PR for review
-       ↓
-merge → deploy-pages.yml publishes wallet-new/language-<locale>.json
-       ↓
-rehive-wallet-new: `node ./scripts/i18n.mjs pull` installs finished languages (a reviewed commit —
-  a bundled language ships inside the binary, so it is never a bot push)
-```
+---
 
-### Commands
+## Commands
 
 ```bash
-yarn wallet-new:add-language fr      # scaffold, with fr's own plural forms
-yarn wallet-new:diff                 # structure + fill-rate report → src/wallet-new/diff.json
-yarn wallet-new:translate --dry-run  # what would be sent, no API calls
-yarn wallet-new:translate --lang fr  # fill fr (needs ANTHROPIC_API_KEY)
-yarn test                            # validator + plural-expansion tests
+yarn add-language fr        # scaffold, with fr's own plural forms
+yarn diff                   # structure + fill-rate report → src/diff.json
+yarn translate --dry-run     # what would be sent, no API calls
+yarn translate --lang fr     # fill fr (needs ANTHROPIC_API_KEY)
+yarn test                    # validator + plural-expansion tests
 ```
 
-### What the machine output is checked against
+`translate.mjs` also takes `--model <id>` (default `claude-opus-5`), `--batch <n>` (default 60 keys
+per request) and `--effort <low|medium|high|xhigh|max>`.
 
-`translate.mjs` does not trust the model. Every value must pass `scripts/wallet-new/validate.mjs`
-or it is retried once and then **left empty for a human** — never written half-right:
+---
 
-- `{{placeholders}}` identical to the source, same set and count
-- do-not-translate terms from `glossary.json` still present verbatim
-- newline count unchanged, so multi-paragraph help copy keeps its structure
-- no Arabic-Indic or Persian digits — the wallet pins Latin numerals for money and dates
-- not byte-identical to the English for anything longer than three words
+## Adding a language
 
-The lock is stamped only for values that passed, so a failed key is picked up again next run
-instead of looking finished.
+```bash
+yarn add-language de
+```
 
-### Plurals
+This writes `src/locales/language-de.json` with every key German needs — including **German's own
+plural forms**, not English's — plus an empty lock. Commit it. The next English change fills it, or
+run `yarn translate --lang de` now.
 
-English ships `_one`/`_other`. Each target gets **its own** CLDR categories, from
-`Intl.PluralRules`: Arabic six, French two, Japanese one. On the current source that is 2242 keys
-for `fr`, 2262 for `ar`, 2237 for `ja`. This is the main reason the legacy scripts could not be
-reused — a key-for-key diff against English deletes forms Arabic needs and demands forms Japanese
-has no rule for, and the wallet's `bundled-parity.test.ts` rejects both.
+Scaffolding a language you are not going to fill is how the previous pipeline ended up with three
+0%-translated files, so add one only when it is going to be filled.
 
-### Renames and human edits
+---
 
-`locks/language-<locale>.json` stores the SHA-256 of the English value each translation was made
-from. Two things fall out of that:
+## Plurals
 
-- **Rename detection** — a key that left English whose recorded hash matches a key that just
-  arrived is a rename, so the finished translation moves with it instead of being deleted and paid
-  for again.
-- **Stale detection** — if the English changed, the translation is queued for redoing. Add a key to
-  the lock's `reviewed` list and it is left alone permanently; the PR reports it as
-  human-reviewed-but-English-moved rather than silently overwriting a native speaker's fix.
+English ships `_one`/`_other`. Every target gets **its own** CLDR categories, from
+`Intl.PluralRules`. On the current source:
 
-### Required secret
+| Language | Keys | vs English |
+|---|---:|---|
+| `fr` | 2242 | same two forms |
+| `ar` | 2262 | +20 — five plural bases × four extra forms |
+| `ja` | 2237 | −5 — one form per base |
+
+The same count-probing is used as in the wallet's own `bundled-parity.test.ts`, which runs on
+Hermes where `resolvedOptions().pluralCategories` is not always populated. If the two disagreed,
+this pipeline would generate bundles the app rejects.
+
+---
+
+## What machine output is checked against
+
+`translate.mjs` does not trust the model. Every value must pass `scripts/validate.mjs` or it is
+retried once and then **left empty for a human** — never written half-right:
+
+- `{{placeholders}}` identical to the source, same set and count. A dropped `{{amount}}` is a hole
+  in a confirm screen.
+- Do-not-translate terms from `glossary.json` still present verbatim. A translated brand name reads
+  as correct copy and is caught by nothing downstream.
+- Newline count unchanged, so multi-paragraph help copy keeps its structure.
+- No Arabic-Indic or Persian digits — the wallet pins Latin numerals for money and dates.
+- Not byte-identical to the English for anything longer than three words.
+
+The lock is stamped **only** for values that passed, so a failed key is picked up again on the next
+run instead of looking finished.
+
+---
+
+## Renames and human edits
+
+`src/locks/language-<locale>.json` stores the SHA-256 of the English value each translation was
+made from. Two things fall out of that:
+
+- **Renames.** A key that left English whose recorded hash matches a key that just arrived is a
+  rename, so the finished translation moves with it instead of being deleted and paid for twice.
+- **Stale.** If the English changed, the translation is queued to be redone.
+
+To protect a human edit, add its key to the lock's `reviewed` list. It will never be overwritten,
+and the PR reports it as *human-reviewed, English moved on* rather than silently clobbering it.
+
+---
+
+## Translation guidelines (for PR review)
+
+- Template variables stay exact: `{{name}}`, `{{count}}`, `{{company.name}}`
+- Keys are never translated, only values
+- Keep it tight — these strings sit in buttons and list rows on a phone
+- Match the register a mainstream bank app uses in that language
+- If a string has no good translation, leave it empty and say so in the PR
+
+---
+
+## Secrets
 
 | Secret | Purpose |
 |--------|---------|
-| `ANTHROPIC_API_KEY` | `translate.mjs`. **Until this is set the translate step is skipped** and the workflow opens a PR of empty placeholders — the old manual flow, not a failure. |
+| `ANTHROPIC_API_KEY` | `translate.mjs`. **Until this is set the translate step is skipped** and the workflow opens a PR of empty placeholders — the manual flow, not a failure. |
+| `TRANSLATIONS_BOT_APP_ID` / `TRANSLATIONS_BOT_PRIVATE_KEY` | Lets `rehive-wallet-new` push `src/language-en.json` here. Add that repo to the secrets' repository list. |
 
-## GitHub secrets required
-
-Cross-repo pushes are authenticated by the **`rehive-translations-bot`** GitHub App (installed on `wallet-translations` only, with Contents: write). Each repo that needs to push reads the app credentials from these org-level secrets:
-
-| Secret | Where | Description |
-|--------|-------|-------------|
-| `TRANSLATIONS_BOT_APP_ID` | wallet-react, wallet-react-native, wallet-translations | App ID of `rehive-translations-bot`. |
-| `TRANSLATIONS_BOT_PRIVATE_KEY` | wallet-react, wallet-react-native, wallet-translations | Private key (PEM) of `rehive-translations-bot`. |
-
-Each workflow mints a short-lived installation token via [`actions/create-github-app-token`](https://github.com/actions/create-github-app-token):
-
-- **wallet-react / wallet-react-native** — mint a token scoped to `wallet-translations` and push their `src/source/*.json` file here. The token can only touch `wallet-translations`, never the wallet repo it runs in.
-- **wallet-translations** (`merge-app-translations.yml`) — mints a token to push `src/language-en.json`. This is required because a push made with the built-in `GITHUB_TOKEN` does **not** trigger other workflows; pushing as the app lets `sync-and-update.yml` and `deploy-pages.yml` fire.
-
-The remaining workflows here (`sync-and-update.yml`, `deploy-pages.yml`) use only the built-in `GITHUB_TOKEN`.
-
-> **Why a GitHub App and not a PAT?** The app isn't tied to a person, mints short-lived tokens, and never expires (no annual renewal). If its private key leaks, the blast radius is write access to `wallet-translations` only — the one repo it's installed on.
-
----
-
-## Translation guidelines
-
-- Preserve any template variables exactly: `{{name}}`, `{{count}}`, `{{company.name}}`
-- Preserve Markdown formatting where present: `**bold**`, `_italic_`
-- Do not translate keys — only values
-- If a string has no direct translation, use a best-effort approximation and note it in the PR
+The `rehive-translations-bot` GitHub App is installed on this repo only, with Contents: write, and
+each workflow mints a short-lived token via
+[`actions/create-github-app-token`](https://github.com/actions/create-github-app-token). If its
+private key leaks, the blast radius is write access to this repo alone.
 
 ---
 
 ## Accessing language files
 
-Language files are deployed to GitHub Pages on every push to `main`. Files are served flat — no need to know the internal directory structure:
+Published to GitHub Pages on every push to `main`, served flat:
 
 ```
 https://rehive.github.io/wallet-translations/language-en.json
 https://rehive.github.io/wallet-translations/language-fr.json
-https://rehive.github.io/wallet-translations/language-de.json
-```
-
-An `index.json` is also generated listing all available locale codes:
-
-```
 https://rehive.github.io/wallet-translations/index.json
 ```
 
+`index.json` lists the available locale codes:
+
 ```json
-{ "locales": ["en", "fr", "de"] }
+{ "locales": ["en", "fr"] }
 ```
+
+This is a convenience for tooling. The wallet bundles its languages at build time and does not
+fetch them at runtime.

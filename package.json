@@ -1,18 +1,15 @@
 {
   "name": "wallet-translations",
   "version": "1.0.0",
-  "description": "Centralized translation files for Rehive wallet apps",
+  "description": "Translation files for the Rehive wallet (rehive-wallet-new)",
   "private": false,
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "sync": "node scripts/sync.cjs",
-    "diff": "node scripts/diff.js",
-    "add-language": "node scripts/add-language.js",
-    "wallet-new:diff": "node scripts/wallet-new/diff.mjs",
-    "wallet-new:translate": "node scripts/wallet-new/translate.mjs",
-    "wallet-new:add-language": "node scripts/wallet-new/add-language.mjs",
-    "test": "node --test scripts/wallet-new/validate.test.mjs"
+    "diff": "node scripts/diff.mjs",
+    "translate": "node scripts/translate.mjs",
+    "add-language": "node scripts/add-language.mjs",
+    "test": "node --test scripts/validate.test.mjs"
   },
   "packageManager": "yarn@1.22.22",
   "engines": {
